@@ -1,0 +1,6 @@
+framework module Pods_Paragliding {
+  umbrella header "Pods-Paragliding-umbrella.h"
+
+  export *
+  module * { export * }
+}

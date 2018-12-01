@@ -26,6 +26,7 @@
 		F4D00D9521A9BEA400649DC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4D00D9721A9BEA400649DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E384B621B1FFAB009FF8C1 /* Sites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sites.storyboard; sourceTree = "<group>"; };
+		F4E384B821B20BE9009FF8C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 				F4E384B321B1FD15009FF8C1 /* ViewModel */,
 				F4E384B421B1FD4E009FF8C1 /* Helper */,
 				F459FAD421AF55D0007BD86C /* Storyboards */,
+				F4E384B821B20BE9009FF8C1 /* README.md */,
 			);
 			path = Paragliding;
 			sourceTree = "<group>";

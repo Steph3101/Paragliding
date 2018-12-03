@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BFFAFB00983779B7B9AF7550 /* Pods_Paragliding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DCC5434EF734E66F6272D /* Pods_Paragliding.framework */; };
 		F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459FAD221AF556E007BD86C /* AppDelegate.swift */; };
+		F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66C21B5E7C200E7FA39 /* Site.swift */; };
+		F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */; };
 		F4D00D9121A9BEA400649DC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D8F21A9BEA400649DC5 /* Main.storyboard */; };
 		F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9221A9BEA400649DC5 /* Assets.xcassets */; };
 		F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */; };
@@ -20,6 +22,8 @@
 		5E6B736CF89E84A411195B74 /* Pods-Paragliding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragliding.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding.release.xcconfig"; sourceTree = "<group>"; };
 		70078B5D1A219AB4C09476CD /* Pods-Paragliding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragliding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding.debug.xcconfig"; sourceTree = "<group>"; };
 		F459FAD221AF556E007BD86C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4BDE66C21B5E7C200E7FA39 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFVLSite.swift; sourceTree = "<group>"; };
 		F4D00D8821A9BEA400649DC5 /* Paragliding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paragliding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D00D9021A9BEA400649DC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4D00D9221A9BEA400649DC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		F4BDE67021B5F18C00E7FA39 /* Sites */ = {
+			isa = PBXGroup;
+			children = (
+				F4BDE66C21B5E7C200E7FA39 /* Site.swift */,
+				F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */,
+			);
+			path = Sites;
+			sourceTree = "<group>";
+		};
 		F4D00D7F21A9BEA400649DC5 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,7 @@
 		F4E384B121B1FD09009FF8C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F4BDE67021B5F18C00E7FA39 /* Sites */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */,
 				F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */,
+				F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

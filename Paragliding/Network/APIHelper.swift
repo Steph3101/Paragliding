@@ -12,7 +12,14 @@ import SwiftyJSON
 
 class APIHelper: NSObject {
 
-    private static let FFVLProvider = MoyaProvider<FFVLAPI>()
+    // Default provider
+//    private static let FFVLProvider = MoyaProvider<FFVLAPI>()
+
+    // Stubbed provider
+    private static let FFVLProvider = MoyaProvider<FFVLAPI>(stubClosure: MoyaProvider.immediatelyStub)
+
+    // Logged provider
+//        private static let FFVLProvider = MoyaProvider<FFVLAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
     static func getFFVLSites(completion: (([Site]) -> ())? = nil) {
         FFVLProvider.request(.getSites) { result in
@@ -25,9 +32,11 @@ class APIHelper: NSObject {
                         completion(sites)
                     }
                 } catch {
+                    // TODO: handle error
                     print(error)
                 }
             case let .failure(error):
+                // TODO: handle failure
                 print(error)
             }
         }

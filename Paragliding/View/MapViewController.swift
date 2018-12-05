@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import MapKit
 import Moya
 
 class MapViewController: UIViewController {
+
+    @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         APIHelper.getFFVLSites { (sites) in
-            sites.forEach({ (site) in
-                print(site.name ?? "")
-            })
+            self.mapView.addAnnotations(sites)
         }
     }
 }

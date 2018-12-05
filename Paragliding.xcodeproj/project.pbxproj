@@ -73,9 +73,8 @@
 		F459FAD421AF55D0007BD86C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */,
 				F4D00D8F21A9BEA400649DC5 /* Main.storyboard */,
-				F4E384B621B1FFAB009FF8C1 /* Map.storyboard */,
+				F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -135,6 +134,7 @@
 		F4E384B221B1FD0F009FF8C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F4E384B621B1FFAB009FF8C1 /* Map.storyboard */,
 				F4F9F61121B71ABA0061DA48 /* MapViewController.swift */,
 			);
 			path = View;

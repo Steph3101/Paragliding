@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreLocation
+import MapKit
 
 enum Orientation: String {
     case N
@@ -33,11 +33,12 @@ enum Orientation: String {
     }
 }
 
-class Site: NSObject {
-    var location: CLPlacemark?
+class Site: NSObject, MKAnnotation {
     var name: String?
+    var coordinate: CLLocationCoordinate2D = kCLLocationCoordinate2DInvalid
     var orientations: [Orientation]?
     var favorableWinds: [Orientation]?
     var unfavorableWinds: [Orientation]?
     var siteDescription: String?
+    var altitude: Int?
 }

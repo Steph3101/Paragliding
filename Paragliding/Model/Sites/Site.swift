@@ -9,6 +9,21 @@
 import UIKit
 import MapKit
 
+class Site: NSObject, MKAnnotation {
+    var name: String?
+    var coordinate: CLLocationCoordinate2D = kCLLocationCoordinate2DInvalid
+    var orientations: [Orientation]?
+    var favorableWinds: [Orientation]?
+    var unfavorableWinds: [Orientation]?
+    var siteDescription: String?
+    var altitude: Int?
+}
+
+enum type {
+    case takeOff
+    case landing
+}
+
 enum Orientation: String {
     case N
     case NNE
@@ -31,14 +46,15 @@ enum Orientation: String {
     init(withFrenchNotation notation: String) {
         self = Orientation.init(rawValue: notation.replacingOccurrences(of: "O", with: "W")) ?? Orientation.undefined
     }
-}
 
-class Site: NSObject, MKAnnotation {
-    var name: String?
-    var coordinate: CLLocationCoordinate2D = kCLLocationCoordinate2DInvalid
-    var orientations: [Orientation]?
-    var favorableWinds: [Orientation]?
-    var unfavorableWinds: [Orientation]?
-    var siteDescription: String?
-    var altitude: Int?
+    static func orientations(fromList list: String) -> [Orientation]? {
+        let separator = list.contains(",") ? "," : ";"
+
+        let orientations = list.components(separatedBy: separator)
+        guard list.isEmpty == false, orientations.count > 0 else { return nil }
+
+        return orientations.compactMap { (orientationString) -> Orientation? in
+            return orientationString.isEmpty ? nil : Orientation(withFrenchNotation: orientationString)
+        }
+    }
 }

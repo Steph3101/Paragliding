@@ -19,7 +19,10 @@ class FFVLSite: Site, ALSwiftyJSONAble {
         self.name               = jsonData["nom"].stringValue
         self.siteDescription    = jsonData["description"].stringValue
         self.altitude           = jsonData["alt"].intValue
-        
+        self.orientations       = Orientation.orientations(fromList: jsonData["orientation"].stringValue)
+        self.favorableWinds     = Orientation.orientations(fromList: jsonData["vent_favo"].stringValue)
+        self.unfavorableWinds   = Orientation.orientations(fromList: jsonData["vent_defavo"].stringValue)
+
         // Map coordinates
         let latitude    = Double(jsonData["lat"].stringValue)
         let longitude   = Double(jsonData["lon"].stringValue)

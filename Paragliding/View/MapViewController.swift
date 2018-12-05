@@ -19,6 +19,13 @@ class MapViewController: UIViewController {
 
         APIHelper.getFFVLSites { (sites) in
             self.mapView.addAnnotations(sites)
+
+            sites.forEach({ (site) in
+                print("---")
+                print(site.orientations ?? "None")
+                print(site.favorableWinds ?? "None")
+                print(site.unfavorableWinds ?? "None")
+            })
         }
     }
 }

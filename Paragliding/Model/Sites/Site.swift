@@ -17,6 +17,16 @@ class Site: NSObject, MKAnnotation {
     var unfavorableWinds: [Orientation]?
     var siteDescription: String?
     var altitude: Int?
+
+    var title: String? {
+        return name
+    }
+
+    var subtitle: String? {
+        guard let orientations = orientations else { return nil }
+        
+        return Orientation.string(fromOrientations: orientations)
+    }
 }
 
 enum type {
@@ -56,5 +66,13 @@ enum Orientation: String {
         return orientations.compactMap { (orientationString) -> Orientation? in
             return orientationString.isEmpty ? nil : Orientation(withFrenchNotation: orientationString)
         }
+    }
+
+    static func string(fromOrientations orientations: [Orientation]) -> String {
+        let stringsOrientations = orientations.map { (orientation) -> String in
+            return orientation.rawValue
+        }
+
+        return stringsOrientations.joined(separator: ", ")
     }
 }

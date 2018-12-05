@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="LM7-Se-lp8">
             <objects>
-                <viewController storyboardIdentifier="Sites" id="9Ow-gm-xJe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Sites" id="9Ow-gm-xJe" customClass="MapViewController" customModule="Paragliding" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e0n-3N-slP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

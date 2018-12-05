@@ -6,8 +6,13 @@
 //  Copyright © 2018 Stéphane Azzopardi. All rights reserved.
 //
 
-import UIKit
+import Moya_SwiftyJSONMapper
+import SwiftyJSON
 
-class FFVLSite: Site {
+class FFVLSite: Site, ALSwiftyJSONAble {
+    required init?(jsonData: JSON) {
+        super.init()
 
+        self.name = jsonData["nom"].stringValue
+    }
 }

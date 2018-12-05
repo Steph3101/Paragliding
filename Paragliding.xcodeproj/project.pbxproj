@@ -14,7 +14,11 @@
 		F4D00D9121A9BEA400649DC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D8F21A9BEA400649DC5 /* Main.storyboard */; };
 		F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9221A9BEA400649DC5 /* Assets.xcassets */; };
 		F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */; };
-		F4E384B721B1FFAB009FF8C1 /* Sites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E384B621B1FFAB009FF8C1 /* Sites.storyboard */; };
+		F4E384B721B1FFAB009FF8C1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E384B621B1FFAB009FF8C1 /* Map.storyboard */; };
+		F4F9F60D21B713230061DA48 /* FFVLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9F60C21B713230061DA48 /* FFVLAPI.swift */; };
+		F4F9F61021B719040061DA48 /* getSites.json in Resources */ = {isa = PBXBuildFile; fileRef = F4F9F60F21B719040061DA48 /* getSites.json */; };
+		F4F9F61221B71ABA0061DA48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9F61121B71ABA0061DA48 /* MapViewController.swift */; };
+		F4F9F61521B71D230061DA48 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9F61421B71D230061DA48 /* APIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +33,12 @@
 		F4D00D9221A9BEA400649DC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4D00D9521A9BEA400649DC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4D00D9721A9BEA400649DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4E384B621B1FFAB009FF8C1 /* Sites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sites.storyboard; sourceTree = "<group>"; };
+		F4E384B621B1FFAB009FF8C1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		F4E384B821B20BE9009FF8C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F4F9F60C21B713230061DA48 /* FFVLAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFVLAPI.swift; sourceTree = "<group>"; };
+		F4F9F60F21B719040061DA48 /* getSites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getSites.json; sourceTree = "<group>"; };
+		F4F9F61121B71ABA0061DA48 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F4F9F61421B71D230061DA48 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +73,9 @@
 		F459FAD421AF55D0007BD86C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				F4D00D8F21A9BEA400649DC5 /* Main.storyboard */,
-				F4E384B621B1FFAB009FF8C1 /* Sites.storyboard */,
 				F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */,
+				F4D00D8F21A9BEA400649DC5 /* Main.storyboard */,
+				F4E384B621B1FFAB009FF8C1 /* Map.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -105,6 +113,7 @@
 				F459FAD221AF556E007BD86C /* AppDelegate.swift */,
 				F4D00D9221A9BEA400649DC5 /* Assets.xcassets */,
 				F4D00D9721A9BEA400649DC5 /* Info.plist */,
+				F4F9F60B21B712FA0061DA48 /* Network */,
 				F4E384B121B1FD09009FF8C1 /* Model */,
 				F4E384B221B1FD0F009FF8C1 /* View */,
 				F4E384B321B1FD15009FF8C1 /* ViewModel */,
@@ -126,6 +135,7 @@
 		F4E384B221B1FD0F009FF8C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F4F9F61121B71ABA0061DA48 /* MapViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +152,32 @@
 			children = (
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		F4F9F60B21B712FA0061DA48 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F4F9F61421B71D230061DA48 /* APIHelper.swift */,
+				F4F9F61321B71CFD0061DA48 /* APIProviders */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F4F9F60E21B718590061DA48 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				F4F9F60F21B719040061DA48 /* getSites.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		F4F9F61321B71CFD0061DA48 /* APIProviders */ = {
+			isa = PBXGroup;
+			children = (
+				F4F9F60C21B713230061DA48 /* FFVLAPI.swift */,
+				F4F9F60E21B718590061DA48 /* Stubs */,
+			);
+			path = APIProviders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,8 +242,9 @@
 			files = (
 				F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */,
 				F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */,
+				F4F9F61021B719040061DA48 /* getSites.json in Resources */,
 				F4D00D9121A9BEA400649DC5 /* Main.storyboard in Resources */,
-				F4E384B721B1FFAB009FF8C1 /* Sites.storyboard in Resources */,
+				F4E384B721B1FFAB009FF8C1 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,13 +260,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-SwiftyJSONMapper/Moya_SwiftyJSONMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_SwiftyJSONMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -265,9 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F9F61521B71D230061DA48 /* APIHelper.swift in Sources */,
 				F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */,
 				F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */,
 				F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */,
+				F4F9F61221B71ABA0061DA48 /* MapViewController.swift in Sources */,
+				F4F9F60D21B713230061DA48 /* FFVLAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

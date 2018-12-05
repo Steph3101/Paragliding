@@ -70,13 +70,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F459FAD421AF55D0007BD86C /* Storyboards */ = {
+		F459FAD421AF55D0007BD86C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				F4D00D8F21A9BEA400649DC5 /* Main.storyboard */,
 				F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */,
+				F459FAD221AF556E007BD86C /* AppDelegate.swift */,
+				F4D00D9221A9BEA400649DC5 /* Assets.xcassets */,
 			);
-			path = Storyboards;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F4BDE67021B5F18C00E7FA39 /* Sites */ = {
@@ -109,15 +111,13 @@
 		F4D00D8A21A9BEA400649DC5 /* Paragliding */ = {
 			isa = PBXGroup;
 			children = (
-				F459FAD221AF556E007BD86C /* AppDelegate.swift */,
-				F4D00D9221A9BEA400649DC5 /* Assets.xcassets */,
 				F4D00D9721A9BEA400649DC5 /* Info.plist */,
 				F4F9F60B21B712FA0061DA48 /* Network */,
 				F4E384B121B1FD09009FF8C1 /* Model */,
 				F4E384B221B1FD0F009FF8C1 /* View */,
 				F4E384B321B1FD15009FF8C1 /* ViewModel */,
 				F4E384B421B1FD4E009FF8C1 /* Helper */,
-				F459FAD421AF55D0007BD86C /* Storyboards */,
+				F459FAD421AF55D0007BD86C /* Resources */,
 				F4E384B821B20BE9009FF8C1 /* README.md */,
 			);
 			path = Paragliding;

@@ -53,7 +53,7 @@ class MapViewController: UIViewController {
         let isLocationEnabled = [CLAuthorizationStatus.authorizedWhenInUse,
                                  CLAuthorizationStatus.authorizedAlways].contains(CLLocationManager.authorizationStatus())
 
-        centerMapButton.imageView?.tintColor = isLocationEnabled ? UIColor.white : UIColor.gray
+        centerMapButton.imageView?.tintColor = isLocationEnabled ? Color.white : Color.gray
     }
 
     func handleInitialLocationAuthorizations() {
@@ -73,6 +73,27 @@ class MapViewController: UIViewController {
         isCenterMapRequested = false
         mapView.setCenter(location.coordinate, animated: true)
     }
+
+    func showSettingsAlert() {
+        let alert = UIAlertController(title: "Position GPS",
+                                      message: "Pour visualiser les sites proches de votre position, vous devez autoriser \(SwifterSwift.appDisplayName ?? "l'application") à consulter votre position géographique dans les réglages de votre \(SwifterSwift.deviceModel).",
+                                      defaultActionButtonTitle: "Annuler",
+                                      tintColor: Color.orange)
+
+        alert.addAction(UIAlertAction(title: "Réglages",
+                                      style: .default,
+                                      handler: { (alertAction) in
+                                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                                            return
+                                        }
+
+                                        if UIApplication.shared.canOpenURL(settingsUrl) {
+                                            UIApplication.shared.open(settingsUrl, completionHandler: nil)
+                                        }
+        }))
+
+        alert.show(animated: true, hapticFeedback: true, completion: nil)
+    }
 }
 
 //MARK: - User actions
@@ -82,7 +103,7 @@ extension MapViewController {
         case .authorizedAlways, .authorizedWhenInUse:
             centerMapOnUserPosition()
         case .denied, .restricted:
-            print("Show custom view with Setting link")
+            showSettingsAlert()
         case .notDetermined:
             isCenterMapRequested = true
             locationManager.requestWhenInUseAuthorization()

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BFFAFB00983779B7B9AF7550 /* Pods_Paragliding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DCC5434EF734E66F6272D /* Pods_Paragliding.framework */; };
 		F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459FAD221AF556E007BD86C /* AppDelegate.swift */; };
+		F46D900A21BB2616005D9849 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */; };
 		F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66C21B5E7C200E7FA39 /* Site.swift */; };
 		F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */; };
 		F4D00D9121A9BEA400649DC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D8F21A9BEA400649DC5 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		5E6B736CF89E84A411195B74 /* Pods-Paragliding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragliding.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding.release.xcconfig"; sourceTree = "<group>"; };
 		70078B5D1A219AB4C09476CD /* Pods-Paragliding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragliding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding.debug.xcconfig"; sourceTree = "<group>"; };
 		F459FAD221AF556E007BD86C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIAlertControllerExtension.swift; path = Paragliding/Utils/UIAlertControllerExtension.swift; sourceTree = SOURCE_ROOT; };
 		F4BDE66C21B5E7C200E7FA39 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFVLSite.swift; sourceTree = "<group>"; };
 		F4D00D8821A9BEA400649DC5 /* Paragliding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paragliding.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 				F4E384B221B1FD0F009FF8C1 /* View */,
 				F4E384B321B1FD15009FF8C1 /* ViewModel */,
 				F4E384B421B1FD4E009FF8C1 /* Helper */,
+				F4E384B421B1FD4E009FF8C1 /* Utils */,
 				F459FAD421AF55D0007BD86C /* Resources */,
 				F4E384B821B20BE9009FF8C1 /* README.md */,
 			);
@@ -147,11 +150,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F4E384B421B1FD4E009FF8C1 /* Helper */ = {
+		F4E384B421B1FD4E009FF8C1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */,
 			);
-			path = Helper;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F4F9F60B21B712FA0061DA48 /* Network */ = {
@@ -318,6 +322,7 @@
 				F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */,
 				F4F9F61221B71ABA0061DA48 /* MapViewController.swift in Sources */,
 				F4F9F60D21B713230061DA48 /* FFVLAPI.swift in Sources */,
+				F46D900A21BB2616005D9849 /* UIAlertControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

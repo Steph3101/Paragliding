@@ -1,0 +1,7 @@
+input_dir: Sources/Resources
+output_dir: Sources/Generated/
+strings:
+  inputs: path/to/Localizable.strings
+  outputs:
+    templateName: structured-swift4
+    output: Strings.swift

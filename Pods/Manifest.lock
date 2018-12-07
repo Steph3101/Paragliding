@@ -28,12 +28,14 @@ PODS:
   - SwifterSwift/SpriteKit (4.6.0)
   - SwifterSwift/SwiftStdlib (4.6.0)
   - SwifterSwift/UIKit (4.6.0)
+  - SwiftGen (6.0.2)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Moya
   - Moya-SwiftyJSONMapper
   - SwifterSwift
+  - SwiftGen
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -42,6 +44,7 @@ SPEC REPOS:
     - Moya-SwiftyJSONMapper
     - Result
     - SwifterSwift
+    - SwiftGen
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -50,8 +53,9 @@ SPEC CHECKSUMS:
   Moya-SwiftyJSONMapper: ceecd41a96b31ae4d17cd80a271a544563fe2c57
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
+  SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: cafc90d9bc68d09b6723405cf868d03c70de281c
+PODFILE CHECKSUM: d16fdc07679659e7cec523c7aa0b5d3c8524df23
 
 COCOAPODS: 1.5.3

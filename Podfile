@@ -10,5 +10,6 @@ target 'Paragliding' do
   pod 'SwifterSwift'
   pod 'Moya'
   pod 'Moya-SwiftyJSONMapper'
+  pod 'SwiftGen'
 
 end

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Paragliding
+
+  Created by Stéphane Azzopardi on 08/12/2018.
+  Copyright © 2018 Stéphane Azzopardi. All rights reserved.
+*/
+
+//MARK: - Common
+"common.cancel" = "Cancel";
+"common.settings" = "Settings";
+
+//MARK: - Map
+"map.locationAlert.title" = "Location";
+"map.locationAlert.message" = "Edit your %@'s settings to authorize %@ to read your location.";

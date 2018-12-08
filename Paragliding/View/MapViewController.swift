@@ -75,12 +75,12 @@ class MapViewController: UIViewController {
     }
 
     func showSettingsAlert() {
-        let alert = UIAlertController(title: "Position GPS",
-                                      message: "Pour visualiser les sites proches de votre position, vous devez autoriser \(SwifterSwift.appDisplayName ?? "l'application") à consulter votre position géographique dans les réglages de votre \(SwifterSwift.deviceModel).",
-                                      defaultActionButtonTitle: "Annuler",
+        let alert = UIAlertController(title: L10n.Map.LocationAlert.title,
+                                      message: L10n.Map.LocationAlert.message(SwifterSwift.deviceModel, SwifterSwift.appDisplayName ?? ""),
+                                      defaultActionButtonTitle: L10n.Common.cancel,
                                       tintColor: Color.orange)
 
-        alert.addAction(UIAlertAction(title: "Réglages",
+        alert.addAction(UIAlertAction(title: L10n.Common.settings,
                                       style: .default,
                                       handler: { (alertAction) in
                                         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {

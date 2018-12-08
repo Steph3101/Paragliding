@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  Paragliding
+
+  Created by Stéphane Azzopardi on 08/12/2018.
+  Copyright © 2018 Stéphane Azzopardi. All rights reserved.
+*/
+
+//MARK: - Common
+"common.settings" = "Réglages";
+"common.cancel" = "Annuler";
+
+//MARK: - Map
+"map.locationAlert.title" = "Position GPS";
+"map.locationAlert.message" = "Allez dans les réglages de votre %@ pour autoriser %@ à consulter votre position GPS";
+
+//MARK: Orientations
+"SSW" = "SSO";
+"SW" = "SO";
+"WSW" = "OSO";
+"W" = "O";
+"WNW" = "ONO";
+"NW" = "NO";
+"NNW" = "NNO";

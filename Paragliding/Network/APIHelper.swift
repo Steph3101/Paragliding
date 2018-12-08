@@ -13,10 +13,10 @@ import SwiftyJSON
 class APIHelper: NSObject {
 
     // Default provider
-//    private static let FFVLProvider = MoyaProvider<FFVLAPI>()
+    private static let FFVLProvider = MoyaProvider<FFVLAPI>()
 
     // Stubbed provider
-    private static let FFVLProvider = MoyaProvider<FFVLAPI>(stubClosure: MoyaProvider.immediatelyStub)
+//    private static let FFVLProvider = MoyaProvider<FFVLAPI>(stubClosure: MoyaProvider.immediatelyStub)
 
     // Logged provider
 //        private static let FFVLProvider = MoyaProvider<FFVLAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])

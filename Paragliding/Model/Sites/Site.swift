@@ -51,7 +51,7 @@ enum Orientation: String {
     case WNW
     case NW
     case NNW
-    case undefined
+    case undefined = ""
 
     init(withFrenchNotation notation: String) {
         self = Orientation.init(rawValue: notation.replacingOccurrences(of: "O", with: "W")) ?? Orientation.undefined
@@ -70,7 +70,7 @@ enum Orientation: String {
 
     static func string(fromOrientations orientations: [Orientation]) -> String {
         let stringsOrientations = orientations.map { (orientation) -> String in
-            return orientation.rawValue
+            return orientation.rawValue.localized()
         }
 
         return stringsOrientations.joined(separator: ", ")

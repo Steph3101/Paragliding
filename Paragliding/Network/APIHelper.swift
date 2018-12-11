@@ -9,6 +9,7 @@
 import Moya
 import Moya_SwiftyJSONMapper
 import SwiftyJSON
+import MapKit
 
 class APIHelper: NSObject {
 
@@ -26,7 +27,9 @@ class APIHelper: NSObject {
             switch result {
             case let .success(response):
                 do {
-                    let sites = try response.map(to: [FFVLSite.self])
+                    let sites = try response.map(to: [FFVLSite.self]).filter({ (site) -> Bool in
+                        return CLLocationCoordinate2DIsValid(site.coordinate)
+                    })
 
                     if let completion = completion {
                         completion(sites)

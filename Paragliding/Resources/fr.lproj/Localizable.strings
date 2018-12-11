@@ -7,18 +7,19 @@
 */
 
 //MARK: - Common
-"common.settings" = "Réglages";
-"common.cancel" = "Annuler";
+"common.settings"   = "Réglages";
+"common.cancel"     = "Annuler";
 
 //MARK: - Map
-"map.locationAlert.title" = "Position GPS";
+"map.locationAlert.title"   = "Position GPS";
 "map.locationAlert.message" = "Allez dans les réglages de votre %@ pour autoriser %@ à consulter votre position GPS";
 
 //MARK: Orientations
-"SSW" = "SSO";
-"SW" = "SO";
-"WSW" = "OSO";
-"W" = "O";
-"WNW" = "ONO";
-"NW" = "NO";
-"NNW" = "NNO";
+// Translate only orientations containing West value
+"SSW"   = "SSO";
+"SW"    = "SO";
+"WSW"   = "OSO";
+"W"     = "O";
+"WNW"   = "ONO";
+"NW"    = "NO";
+"NNW"   = "NNO";

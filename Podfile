@@ -11,5 +11,7 @@ target 'Paragliding' do
   pod 'Moya'
   pod 'Moya-SwiftyJSONMapper'
   pod 'SwiftGen'
+  pod 'Mapbox-iOS-SDK'
+  pod 'ClusterKit/Mapbox'
 
 end

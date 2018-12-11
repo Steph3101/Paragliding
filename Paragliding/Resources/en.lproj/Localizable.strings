@@ -7,9 +7,9 @@
 */
 
 //MARK: - Common
-"common.cancel" = "Cancel";
-"common.settings" = "Settings";
+"common.cancel"     = "Cancel";
+"common.settings"   = "Settings";
 
 //MARK: - Map
-"map.locationAlert.title" = "Location";
+"map.locationAlert.title"   = "Location";
 "map.locationAlert.message" = "Edit your %@'s settings to authorize %@ to read your location.";

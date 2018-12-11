@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sBT-xb-TrU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="TcH-3G-fwd">
+            <objects>
+                <viewController id="sBT-xb-TrU" customClass="MapViewController" customModule="Paragliding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cC0-KX-ENA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6km-y4-S9M" customClass="ASMGLMapView" customModule="Paragliding" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.89445233589999995" green="0.45710876709999998" blue="0.023061178969999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knF-qi-KTc">
+                                <rect key="frame" x="305" y="318.5" width="50" height="50"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NI7-gJ-Pji">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtz-Ka-gdH">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <state key="normal" image="mapCenter"/>
+                                            <connections>
+                                                <action selector="centerMapButtonPressed:" destination="sBT-xb-TrU" eventType="touchUpInside" id="F9e-S0-tWM"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qtz-Ka-gdH" firstAttribute="centerX" secondItem="NI7-gJ-Pji" secondAttribute="centerX" id="45w-YA-Yqe"/>
+                                        <constraint firstItem="qtz-Ka-gdH" firstAttribute="centerY" secondItem="NI7-gJ-Pji" secondAttribute="centerY" id="87s-Fn-USY"/>
+                                        <constraint firstItem="qtz-Ka-gdH" firstAttribute="top" secondItem="NI7-gJ-Pji" secondAttribute="top" id="mln-w0-mUB"/>
+                                        <constraint firstItem="qtz-Ka-gdH" firstAttribute="leading" secondItem="NI7-gJ-Pji" secondAttribute="leading" id="ppD-gu-8tl"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="izX-pi-ggR" firstAttribute="trailing" secondItem="knF-qi-KTc" secondAttribute="trailing" constant="20" id="RDl-99-2Lg"/>
+                            <constraint firstItem="6km-y4-S9M" firstAttribute="leading" secondItem="cC0-KX-ENA" secondAttribute="leading" id="YHY-05-8mu"/>
+                            <constraint firstAttribute="bottom" secondItem="6km-y4-S9M" secondAttribute="bottom" id="fTY-d0-TOu"/>
+                            <constraint firstItem="knF-qi-KTc" firstAttribute="centerY" secondItem="izX-pi-ggR" secondAttribute="centerY" id="fyE-sc-8vf"/>
+                            <constraint firstAttribute="trailing" secondItem="6km-y4-S9M" secondAttribute="trailing" id="gBg-WL-h4l"/>
+                            <constraint firstItem="6km-y4-S9M" firstAttribute="top" secondItem="cC0-KX-ENA" secondAttribute="top" id="tDZ-x0-Rfo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="izX-pi-ggR"/>
+                    </view>
+                    <connections>
+                        <outlet property="centerMapButton" destination="qtz-Ka-gdH" id="rGV-34-fy4"/>
+                        <outlet property="centerMapButtonContainerView" destination="knF-qi-KTc" id="L01-Wy-obW"/>
+                        <outlet property="mapView" destination="6km-y4-S9M" id="h3f-uV-Z06"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhr-0y-mxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="150"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mapCenter" width="50" height="50"/>
+    </resources>
+</document>

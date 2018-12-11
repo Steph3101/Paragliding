@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BFFAFB00983779B7B9AF7550 /* Pods_Paragliding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DCC5434EF734E66F6272D /* Pods_Paragliding.framework */; };
+		F42AC92221C056DE00938786 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42AC92121C056DE00938786 /* MapViewModel.swift */; };
+		F431912821C07CAC006F787A /* ASMGLMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431912721C07CAC006F787A /* ASMGLMapView.swift */; };
+		F431912921C07E08006F787A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D8F21A9BEA400649DC5 /* Main.storyboard */; };
 		F437C72921BB43E70075F8BE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437C72821BB43E70075F8BE /* Strings.swift */; };
 		F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459FAD221AF556E007BD86C /* AppDelegate.swift */; };
 		F46D900A21BB2616005D9849 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */; };
@@ -15,7 +18,6 @@
 		F46D902321BB3EDD005D9849 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F46D902521BB3EDD005D9849 /* Localizable.strings */; };
 		F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66C21B5E7C200E7FA39 /* Site.swift */; };
 		F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */; };
-		F4D00D9121A9BEA400649DC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D8F21A9BEA400649DC5 /* Main.storyboard */; };
 		F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9221A9BEA400649DC5 /* Assets.xcassets */; };
 		F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */; };
 		F4E384B721B1FFAB009FF8C1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E384B621B1FFAB009FF8C1 /* Map.storyboard */; };
@@ -29,6 +31,8 @@
 		270DCC5434EF734E66F6272D /* Pods_Paragliding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paragliding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6B736CF89E84A411195B74 /* Pods-Paragliding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragliding.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding.release.xcconfig"; sourceTree = "<group>"; };
 		70078B5D1A219AB4C09476CD /* Pods-Paragliding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragliding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding.debug.xcconfig"; sourceTree = "<group>"; };
+		F42AC92121C056DE00938786 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		F431912721C07CAC006F787A /* ASMGLMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASMGLMapView.swift; sourceTree = "<group>"; };
 		F437C72821BB43E70075F8BE /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		F459FAD221AF556E007BD86C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIAlertControllerExtension.swift; path = Paragliding/Utils/UIAlertControllerExtension.swift; sourceTree = SOURCE_ROOT; };
@@ -77,6 +81,15 @@
 				5E6B736CF89E84A411195B74 /* Pods-Paragliding.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F42AC92421C05D8500938786 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F4E384B621B1FFAB009FF8C1 /* Map.storyboard */,
+				F4F9F61121B71ABA0061DA48 /* MapViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		F437C72721BB40350075F8BE /* Generated */ = {
@@ -154,8 +167,7 @@
 		F4E384B221B1FD0F009FF8C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F4E384B621B1FFAB009FF8C1 /* Map.storyboard */,
-				F4F9F61121B71ABA0061DA48 /* MapViewController.swift */,
+				F42AC92421C05D8500938786 /* Map */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 		F4E384B321B1FD15009FF8C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F42AC92121C056DE00938786 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -171,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */,
+				F431912721C07CAC006F787A /* ASMGLMapView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -208,8 +222,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4D00D9A21A9BEA400649DC5 /* Build configuration list for PBXNativeTarget "Paragliding" */;
 			buildPhases = (
-				F46D900B21BB3377005D9849 /* SwiftGen */,
 				54787E8FC1168C2389B0FAAD /* [CP] Check Pods Manifest.lock */,
+				F46D900B21BB3377005D9849 /* SwiftGen */,
 				F4D00D8421A9BEA400649DC5 /* Sources */,
 				F4D00D8521A9BEA400649DC5 /* Frameworks */,
 				F4D00D8621A9BEA400649DC5 /* Resources */,
@@ -263,11 +277,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F431912921C07E08006F787A /* Main.storyboard in Resources */,
 				F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */,
 				F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */,
 				F4F9F61021B719040061DA48 /* getSites.json in Resources */,
 				F46D902321BB3EDD005D9849 /* Localizable.strings in Resources */,
-				F4D00D9121A9BEA400649DC5 /* Main.storyboard in Resources */,
 				F4E384B721B1FFAB009FF8C1 /* Map.storyboard in Resources */,
 				F46D900D21BB33C0005D9849 /* swiftgen.yml in Resources */,
 			);
@@ -286,6 +300,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ClusterKit/ClusterKit.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-SwiftyJSONMapper/Moya_SwiftyJSONMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -297,6 +314,9 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ClusterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_SwiftyJSONMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -359,10 +379,12 @@
 				F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */,
 				F437C72921BB43E70075F8BE /* Strings.swift in Sources */,
 				F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */,
+				F431912821C07CAC006F787A /* ASMGLMapView.swift in Sources */,
 				F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */,
 				F4F9F61221B71ABA0061DA48 /* MapViewController.swift in Sources */,
 				F4F9F60D21B713230061DA48 /* FFVLAPI.swift in Sources */,
 				F46D900A21BB2616005D9849 /* UIAlertControllerExtension.swift in Sources */,
+				F42AC92221C056DE00938786 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

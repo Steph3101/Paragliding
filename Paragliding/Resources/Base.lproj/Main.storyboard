@@ -31,7 +31,7 @@
         <scene sceneID="Qx2-fc-rnE">
             <objects>
                 <viewControllerPlaceholder storyboardName="Map" id="5CC-Ke-imI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="emd-aw-anG"/>
+                    <tabBarItem key="tabBarItem" title="" id="emd-aw-anG"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGw-Qy-5mY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Mapbox
+import MapKit
 
 class MapViewModel: NSObject {
 
@@ -15,7 +15,7 @@ class MapViewModel: NSObject {
 
     private var sites: [Site] = [Site]()
 
-    func getSites(completion: (([MGLAnnotation]) -> ())? = nil) {
+    func getSites(completion: (([MKAnnotation]) -> ())? = nil) {
         guard let completion = completion else {
             return
         }

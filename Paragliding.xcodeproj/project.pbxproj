@@ -16,6 +16,7 @@
 		F46D900A21BB2616005D9849 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */; };
 		F46D900D21BB33C0005D9849 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = F46D900C21BB33C0005D9849 /* swiftgen.yml */; };
 		F46D902321BB3EDD005D9849 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F46D902521BB3EDD005D9849 /* Localizable.strings */; };
+		F490DAC821C144A000FBAFFF /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490DAC721C144A000FBAFFF /* Assets.swift */; };
 		F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66C21B5E7C200E7FA39 /* Site.swift */; };
 		F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */; };
 		F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9221A9BEA400649DC5 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		F46D900C21BB33C0005D9849 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
 		F46D902421BB3EDD005D9849 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F46D902621BB3EE0005D9849 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F490DAC721C144A000FBAFFF /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		F4BDE66C21B5E7C200E7FA39 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFVLSite.swift; sourceTree = "<group>"; };
 		F4D00D8821A9BEA400649DC5 /* Paragliding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paragliding.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 		F437C72721BB40350075F8BE /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				F490DAC721C144A000FBAFFF /* Assets.swift */,
 				F437C72821BB43E70075F8BE /* Strings.swift */,
 			);
 			path = Generated;
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F9F61521B71D230061DA48 /* APIHelper.swift in Sources */,
+				F490DAC821C144A000FBAFFF /* Assets.swift in Sources */,
 				F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */,
 				F437C72921BB43E70075F8BE /* Strings.swift in Sources */,
 				F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */,

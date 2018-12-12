@@ -9,7 +9,7 @@
 import Moya
 import Moya_SwiftyJSONMapper
 import SwiftyJSON
-import MapKit
+import CoreLocation
 
 class APIHelper: NSObject {
 

@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Mapbox
+import MapKit
 
-class Site: NSObject, MGLAnnotation {
+class Site: NSObject, MKAnnotation {
     var name: String?
     var coordinate: CLLocationCoordinate2D = kCLLocationCoordinate2DInvalid
     var orientations: [Orientation]?

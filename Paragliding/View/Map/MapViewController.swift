@@ -7,9 +7,12 @@
 //
 
 import UIKit
-import MapKit
 import Mapbox
 import SwifterSwift
+import ClusterKit
+
+public let CKClusterReuseIdentifier = "cluster"
+public let CKAnnotationReuseIdentifier = "annotation"
 
 class MapViewController: UIViewController {
 
@@ -40,11 +43,15 @@ class MapViewController: UIViewController {
     }
 
     private func setup() {
+        let algorithm = CKNonHierarchicalDistanceBasedAlgorithm()
+        algorithm.cellSize = 500
+        mapView.clusterManager.algorithm = algorithm
+
         locationManager.delegate = self
         mapView.delegate = self
 
-        MapViewModel.shared.getSites { (sites) in
-            self.mapView.addAnnotations(sites)
+        MapViewModel.shared.getSites { (sites: [MKAnnotation]) in
+            self.mapView.clusterManager.annotations = sites
         }
     }
 
@@ -131,7 +138,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
-//MARK: - MKMapViewDelegate
+//MARK: - MGLMapViewDelegate
 extension MapViewController: MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
         self.userLocation = userLocation
@@ -140,4 +147,64 @@ extension MapViewController: MGLMapViewDelegate {
             centerMapOnUserPosition()
         }
     }
+
+    //MARK: ClusterKit
+    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        guard let cluster = annotation as? CKCluster else {
+            return nil
+        }
+
+        if cluster.count > 1 {
+            if let clusterView = mapView.dequeueReusableAnnotationImage(withIdentifier: CKClusterReuseIdentifier) {
+                return clusterView
+            }
+
+            let clusterView = MGLAnnotationImage(image: Asset.mapCluster.image, reuseIdentifier: CKClusterReuseIdentifier)
+            return clusterView
+        }
+
+        if let annotationView = mapView.dequeueReusableAnnotationImage(withIdentifier: CKAnnotationReuseIdentifier) {
+            return annotationView
+        }
+
+        let annotationView = MGLAnnotationImage(image: Asset.mapAnnotation.image, reuseIdentifier: CKAnnotationReuseIdentifier)
+        return annotationView
+    }
+
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        guard let cluster = annotation as? CKCluster else {
+            return true
+        }
+
+        return cluster.count == 1
+    }
+
+    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+        mapView.clusterManager.updateClustersIfNeeded()
+    }
+
+    func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+        guard let cluster = annotation as? CKCluster else {
+            return
+        }
+
+        if cluster.count > 1 {
+
+            let edgePadding = UIEdgeInsets(top: 40, left: 20, bottom: 44, right: 20)
+            let camera = mapView.cameraThatFitsCluster(cluster, edgePadding: edgePadding)
+            mapView.setCamera(camera, animated: true)
+
+        } else if let annotation = cluster.firstAnnotation {
+            mapView.clusterManager.selectAnnotation(annotation, animated: false);
+        }
+    }
+
+    func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+        guard let cluster = annotation as? CKCluster, cluster.count == 1 else {
+            return
+        }
+
+        mapView.clusterManager.deselectAnnotation(cluster.firstAnnotation, animated: false);
+    }
 }
+

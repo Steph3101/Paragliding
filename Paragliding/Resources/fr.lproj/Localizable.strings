@@ -12,7 +12,7 @@
 
 //MARK: - Map
 "map.locationAlert.title"   = "Position GPS";
-"map.locationAlert.message" = "Allez dans les réglages de votre %@ pour autoriser %@ à consulter votre position GPS";
+"map.locationAlert.message" = "Accédez aux réglages de votre %@ pour autoriser %@ à consulter votre position GPS";
 
 //MARK: Orientations
 // Translate only orientations containing West value

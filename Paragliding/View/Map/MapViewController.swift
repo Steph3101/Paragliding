@@ -11,8 +11,10 @@ import Mapbox
 import SwifterSwift
 import ClusterKit
 
-public let CKClusterReuseIdentifier = "cluster"
-public let CKAnnotationReuseIdentifier = "annotation"
+private let kCKClusterReuseIdentifier       = "cluster"
+private let kCKAnnotationReuseIdentifier    = "annotation"
+private let kUserZoomLevel                  = 11.0
+private let kInitialZoomLevel               = 4.0
 
 class MapViewController: UIViewController {
 
@@ -31,7 +33,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        setup()
+        setupMapView()
         handleInitialLocationAuthorizations()
     }
 
@@ -42,13 +44,14 @@ class MapViewController: UIViewController {
         updateCenterMapButton()
     }
 
-    private func setup() {
+    private func setupMapView() {
         let algorithm = CKNonHierarchicalDistanceBasedAlgorithm()
         algorithm.cellSize = 500
         mapView.clusterManager.algorithm = algorithm
 
-        locationManager.delegate = self
-        mapView.delegate = self
+        locationManager.delegate    = self
+        mapView.isRotateEnabled     = false
+        mapView.delegate            = self
 
         MapViewModel.shared.getSites { (sites: [MKAnnotation]) in
             self.mapView.clusterManager.annotations = sites
@@ -67,7 +70,7 @@ class MapViewController: UIViewController {
         case .authorizedAlways, .authorizedWhenInUse:
             isCenterMapRequested = true
         case .denied, .restricted, .notDetermined:
-            break
+            centerMapOnDefaultPosition()
         }
     }
 
@@ -77,7 +80,13 @@ class MapViewController: UIViewController {
         }
 
         isCenterMapRequested = false
-        mapView.setCenter(location.coordinate, animated: true)
+        mapView.setCenter(location.coordinate, zoomLevel: max(kUserZoomLevel, mapView.zoomLevel), animated: true)
+    }
+
+    func centerMapOnDefaultPosition() {
+        // France, somewhere in the middle
+        let center = CLLocationCoordinate2D(latitude: 47.824905, longitude:  2.618787)
+        mapView.setCenter(center, zoomLevel: kInitialZoomLevel, direction: 0, animated: false)
     }
 
     func showSettingsAlert() {
@@ -120,6 +129,7 @@ extension MapViewController {
 //MARK: - CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // Hack because this method is always called twice at start
         guard isLocationAuthorizationChangeFirstCall == false else {
             isLocationAuthorizationChangeFirstCall = false
             return
@@ -127,6 +137,8 @@ extension MapViewController: CLLocationManagerDelegate {
 
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+
             if isCenterMapRequested == true {
                 centerMapOnUserPosition()
             }
@@ -155,19 +167,19 @@ extension MapViewController: MGLMapViewDelegate {
         }
 
         if cluster.count > 1 {
-            if let clusterView = mapView.dequeueReusableAnnotationImage(withIdentifier: CKClusterReuseIdentifier) {
+            if let clusterView = mapView.dequeueReusableAnnotationImage(withIdentifier: kCKClusterReuseIdentifier) {
                 return clusterView
             }
 
-            let clusterView = MGLAnnotationImage(image: Asset.mapCluster.image, reuseIdentifier: CKClusterReuseIdentifier)
+            let clusterView = MGLAnnotationImage(image: Asset.mapCluster.image, reuseIdentifier: kCKClusterReuseIdentifier)
             return clusterView
         }
 
-        if let annotationView = mapView.dequeueReusableAnnotationImage(withIdentifier: CKAnnotationReuseIdentifier) {
+        if let annotationView = mapView.dequeueReusableAnnotationImage(withIdentifier: kCKAnnotationReuseIdentifier) {
             return annotationView
         }
 
-        let annotationView = MGLAnnotationImage(image: Asset.mapAnnotation.image, reuseIdentifier: CKAnnotationReuseIdentifier)
+        let annotationView = MGLAnnotationImage(image: Asset.mapAnnotation.image, reuseIdentifier: kCKAnnotationReuseIdentifier)
         return annotationView
     }
 

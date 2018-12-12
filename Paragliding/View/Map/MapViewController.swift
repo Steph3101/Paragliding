@@ -46,7 +46,7 @@ class MapViewController: UIViewController {
 
     private func setupMapView() {
         let algorithm = CKNonHierarchicalDistanceBasedAlgorithm()
-        algorithm.cellSize = 200
+        algorithm.cellSize = 150
 
         mapView.clusterManager.algorithm = algorithm
         mapView.clusterManager.marginFactor = 1
@@ -196,7 +196,9 @@ extension MapViewController: MGLMapViewDelegate {
 
         if cluster.count > 1 {
 
-            let edgePadding = UIEdgeInsets(top: 40, left: 20, bottom: 44, right: 20)
+            let sidesPadding = SwifterSwift.screenWidth / 5
+            let upAndBottomPadding = SwifterSwift.screenWidth / 6
+            let edgePadding = UIEdgeInsets(top: upAndBottomPadding, left: sidesPadding, bottom: upAndBottomPadding, right: sidesPadding)
             let camera = mapView.cameraThatFitsCluster(cluster, edgePadding: edgePadding)
             mapView.setCamera(camera, animated: true)
 

@@ -46,9 +46,11 @@ class MapViewController: UIViewController {
 
     private func setupMapView() {
         let algorithm = CKNonHierarchicalDistanceBasedAlgorithm()
-        algorithm.cellSize = 500
-        mapView.clusterManager.algorithm = algorithm
+        algorithm.cellSize = 200
 
+        mapView.clusterManager.algorithm = algorithm
+        mapView.clusterManager.marginFactor = 1
+        
         locationManager.delegate    = self
         mapView.isRotateEnabled     = false
         mapView.delegate            = self
@@ -161,26 +163,18 @@ extension MapViewController: MGLMapViewDelegate {
     }
 
     //MARK: ClusterKit
-    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
         guard let cluster = annotation as? CKCluster else {
             return nil
         }
 
         if cluster.count > 1 {
-            if let clusterView = mapView.dequeueReusableAnnotationImage(withIdentifier: kCKClusterReuseIdentifier) {
-                return clusterView
-            }
-
-            let clusterView = MGLAnnotationImage(image: Asset.mapCluster.image, reuseIdentifier: kCKClusterReuseIdentifier)
-            return clusterView
+            return mapView.dequeueReusableAnnotationView(withIdentifier: kCKClusterReuseIdentifier) ??
+                MBXClusterView(annotation: annotation, reuseIdentifier: kCKClusterReuseIdentifier)
         }
 
-        if let annotationView = mapView.dequeueReusableAnnotationImage(withIdentifier: kCKAnnotationReuseIdentifier) {
-            return annotationView
-        }
-
-        let annotationView = MGLAnnotationImage(image: Asset.mapAnnotation.image, reuseIdentifier: kCKAnnotationReuseIdentifier)
-        return annotationView
+        return mapView.dequeueReusableAnnotationView(withIdentifier: kCKAnnotationReuseIdentifier) ??
+            MBXAnnotationView(annotation: annotation, reuseIdentifier: kCKAnnotationReuseIdentifier)
     }
 
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
@@ -220,3 +214,58 @@ extension MapViewController: MGLMapViewDelegate {
     }
 }
 
+// MARK: - Custom annotation view
+class MBXAnnotationView: MGLAnnotationView {
+
+    var imageView: UIImageView!
+
+    override init(annotation: MGLAnnotation?, reuseIdentifier: String?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        imageView = UIImageView(image: Asset.mapAnnotation.image)
+        addSubview(imageView)
+        frame = imageView.frame
+
+        isDraggable = true
+        centerOffset = CGVector(dx: 0.5, dy: 1)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
+
+    override func setDragState(_ dragState: MGLAnnotationViewDragState, animated: Bool) {
+        super.setDragState(dragState, animated: animated)
+
+        switch dragState {
+        case .starting:
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.5, options: [.curveLinear], animations: {
+                self.transform = self.transform.scaledBy(x: 2, y: 2)
+            })
+        case .ending:
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.5, options: [.curveLinear], animations: {
+                self.transform = CGAffineTransform.identity
+            })
+        default:
+            break
+        }
+    }
+}
+
+class MBXClusterView: MGLAnnotationView {
+
+    var imageView: UIImageView!
+
+    override init(annotation: MGLAnnotation?, reuseIdentifier: String?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        imageView = UIImageView(image: Asset.mapCluster.image)
+        addSubview(imageView)
+        frame = imageView.frame
+
+        centerOffset = CGVector(dx: 0.5, dy: 1)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
+
+}

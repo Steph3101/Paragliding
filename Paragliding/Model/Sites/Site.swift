@@ -17,6 +17,7 @@ class Site: NSObject, MKAnnotation {
     var unfavorableWinds: [Orientation]?
     var siteDescription: String?
     var altitude: Int?
+    var type: Type?
 
     var title: String? {
         return name
@@ -29,9 +30,10 @@ class Site: NSObject, MKAnnotation {
     }
 }
 
-enum type {
+enum Type {
     case takeOff
     case landing
+    case winch
 }
 
 enum Orientation: String {

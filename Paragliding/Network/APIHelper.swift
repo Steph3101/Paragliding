@@ -28,7 +28,7 @@ class APIHelper: NSObject {
             case let .success(response):
                 do {
                     let sites = try response.map(to: [FFVLSite.self]).filter({ (site) -> Bool in
-                        return CLLocationCoordinate2DIsValid(site.coordinate)
+                        return CLLocationCoordinate2DIsValid(site.coordinate) && site.isFlyingActivity
                     })
 
                     if let completion = completion {

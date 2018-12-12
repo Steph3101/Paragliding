@@ -22,6 +22,18 @@ class FFVLSite: Site, ALSwiftyJSONAble {
         self.orientations       = Orientation.orientations(fromList: jsonData["orientation"].stringValue)
         self.favorableWinds     = Orientation.orientations(fromList: jsonData["vent_favo"].stringValue)
         self.unfavorableWinds   = Orientation.orientations(fromList: jsonData["vent_defavo"].stringValue)
+        self.isFlyingActivity   = jsonData["site_type"].stringValue == "vol"
+
+        switch jsonData["site_sous_type"].stringValue {
+        case "Décollage":
+            self.type = Type.takeOff
+        case "Atterrissage":
+            self.type = Type.landing
+        case "Plateforme de treuil":
+            self.type = Type.winch
+        default:
+            break
+        }
 
         // Map coordinates
         let latitude    = Double(jsonData["lat"].stringValue)
@@ -30,4 +42,6 @@ class FFVLSite: Site, ALSwiftyJSONAble {
             self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         }
     }
+
+    var isFlyingActivity: Bool = false
 }

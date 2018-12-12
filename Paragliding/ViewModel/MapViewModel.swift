@@ -24,6 +24,7 @@ class MapViewModel: NSObject {
             completion(sites)
         } else {
             APIHelper.getFFVLSites { (sites) in
+                print("Sites count : \(sites.count)")
                 self.sites = sites
                 completion(sites)
             }

@@ -18,6 +18,7 @@ class Site: NSObject, MKAnnotation {
     var siteDescription: String?
     var altitude: Int?
     var type: Type?
+    var activities: [Activity]?
 
     var title: String? {
         return name
@@ -34,6 +35,12 @@ enum Type {
     case takeOff
     case landing
     case winch
+}
+
+enum Activity {
+    case paragliding
+    case speedRiding
+    case hangGliding
 }
 
 enum Orientation: String {
@@ -53,10 +60,13 @@ enum Orientation: String {
     case WNW
     case NW
     case NNW
-    case undefined = ""
 
-    init(withFrenchNotation notation: String) {
-        self = Orientation.init(rawValue: notation.replacingOccurrences(of: "O", with: "W")) ?? Orientation.undefined
+    init?(withFrenchNotation notation: String) {
+        if let orientation = Orientation.init(rawValue: notation.replacingOccurrences(of: "O", with: "W")) {
+            self = orientation
+        }
+
+        return nil
     }
 
     static func orientations(fromList list: String) -> [Orientation]? {

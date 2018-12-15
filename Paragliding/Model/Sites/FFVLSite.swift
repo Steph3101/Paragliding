@@ -12,7 +12,9 @@ import CoreLocation
 import MapKit
 
 class FFVLSite: Site, ALSwiftyJSONAble {
-    
+
+    var isFlyingActivity: Bool = false
+
     required init?(jsonData: JSON) {
         super.init()
 
@@ -23,17 +25,8 @@ class FFVLSite: Site, ALSwiftyJSONAble {
         self.favorableWinds     = Orientation.orientations(fromList: jsonData["vent_favo"].stringValue)
         self.unfavorableWinds   = Orientation.orientations(fromList: jsonData["vent_defavo"].stringValue)
         self.isFlyingActivity   = jsonData["site_type"].stringValue == "vol"
-
-        switch jsonData["site_sous_type"].stringValue {
-        case "Décollage":
-            self.type = Type.takeOff
-        case "Atterrissage":
-            self.type = Type.landing
-        case "Plateforme de treuil":
-            self.type = Type.winch
-        default:
-            break
-        }
+        self.type               = FFVLSite.type(fromString: jsonData["site_sous_type"].stringValue)
+        self.activities         = FFVLSite.activities(fromList: jsonData["pratiques"].stringValue)
 
         // Map coordinates
         let latitude    = Double(jsonData["lat"].stringValue)
@@ -43,5 +36,37 @@ class FFVLSite: Site, ALSwiftyJSONAble {
         }
     }
 
-    var isFlyingActivity: Bool = false
+    private static func type(fromString string: String) -> Type? {
+        switch string {
+        case "Décollage":
+            return Type.takeOff
+        case "Atterrissage":
+            return Type.landing
+        case "Plateforme de treuil":
+            return Type.winch
+        default:
+            return nil
+        }
+    }
+
+    // Return a array of activities from a string list. Ex: "parapente;delta;0;0;0"
+    private static func activities(fromList list: String) -> [Activity]? {
+        let separator = list.contains(",") ? "," : ";"
+
+        let activities = list.components(separatedBy: separator)
+        guard list.isEmpty == false, activities.count > 0 else { return nil }
+
+        return activities.compactMap { (activityString) -> Activity? in
+            switch activityString {
+            case "speed-riding":
+                return Activity.speedRiding
+            case "delta":
+                return Activity.hangGliding
+            case "parapente":
+                return Activity.paragliding
+            default:
+                return nil
+            }
+        }
+    }
 }

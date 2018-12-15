@@ -14,10 +14,10 @@ import CoreLocation
 class APIHelper: NSObject {
 
     // Default provider
-    private static let FFVLProvider = MoyaProvider<FFVLAPI>()
+//    private static let FFVLProvider = MoyaProvider<FFVLAPI>()
 
     // Stubbed provider
-//    private static let FFVLProvider = MoyaProvider<FFVLAPI>(stubClosure: MoyaProvider.immediatelyStub)
+    private static let FFVLProvider = MoyaProvider<FFVLAPI>(stubClosure: MoyaProvider.immediatelyStub)
 
     // Logged provider
 //        private static let FFVLProvider = MoyaProvider<FFVLAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
@@ -28,7 +28,7 @@ class APIHelper: NSObject {
             case let .success(response):
                 do {
                     let sites = try response.map(to: [FFVLSite.self]).filter({ (site) -> Bool in
-                        return CLLocationCoordinate2DIsValid(site.coordinate) && site.isFlyingActivity
+                        return CLLocationCoordinate2DIsValid(site.coordinate) && (site.activities?.count ?? 0) > 0
                     })
 
                     if let completion = completion {

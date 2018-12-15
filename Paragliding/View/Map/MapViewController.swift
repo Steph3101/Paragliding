@@ -45,15 +45,17 @@ class MapViewController: UIViewController {
     }
 
     private func setupMapView() {
+        locationManager.delegate        = self
+        mapView.isRotateEnabled         = false
+        mapView.showsScale              = true
+        mapView.isHapticFeedbackEnabled = true
+        mapView.delegate                = self
+
         let algorithm = CKNonHierarchicalDistanceBasedAlgorithm()
         algorithm.cellSize = 150
-
-        mapView.clusterManager.algorithm = algorithm
-        mapView.clusterManager.marginFactor = 1
         
-        locationManager.delegate    = self
-        mapView.isRotateEnabled     = false
-        mapView.delegate            = self
+        mapView.clusterManager.algorithm    = algorithm
+        mapView.clusterManager.marginFactor = 1
 
         MapViewModel.shared.getSites { (sites: [MKAnnotation]) in
             self.mapView.clusterManager.annotations = sites
@@ -76,19 +78,19 @@ class MapViewController: UIViewController {
         }
     }
 
-    func centerMapOnUserPosition() {
+    func centerMapOnUser() {
         guard let location = userLocation else {
             return
         }
 
         isCenterMapRequested = false
-        mapView.setCenter(location.coordinate, zoomLevel: max(kUserZoomLevel, mapView.zoomLevel), animated: true)
+        centerMap(location.coordinate, zoomLevel: max(kUserZoomLevel, mapView.zoomLevel), animated: true)
     }
 
     func centerMapOnDefaultPosition() {
         // France, somewhere in the middle
         let center = CLLocationCoordinate2D(latitude: 47.824905, longitude:  2.618787)
-        mapView.setCenter(center, zoomLevel: kInitialZoomLevel, direction: 0, animated: false)
+        centerMap(center, zoomLevel: kInitialZoomLevel, animated: false)
     }
 
     func showSettingsAlert() {
@@ -111,6 +113,10 @@ class MapViewController: UIViewController {
 
         alert.show(animated: true, hapticFeedback: true, completion: nil)
     }
+
+    func centerMap(_ coordinate: CLLocationCoordinate2D, zoomLevel: Double, animated: Bool = true) {
+        mapView.setCenter(coordinate, zoomLevel: zoomLevel, direction: 0, animated: animated)
+    }
 }
 
 //MARK: - User actions
@@ -118,7 +124,7 @@ extension MapViewController {
     @IBAction func centerMapButtonPressed(_ sender: Any) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways, .authorizedWhenInUse:
-            centerMapOnUserPosition()
+            centerMapOnUser()
         case .denied, .restricted:
             showSettingsAlert()
         case .notDetermined:
@@ -142,7 +148,7 @@ extension MapViewController: CLLocationManagerDelegate {
             mapView.showsUserLocation = true
 
             if isCenterMapRequested == true {
-                centerMapOnUserPosition()
+                centerMapOnUser()
             }
         default:
             break
@@ -158,7 +164,7 @@ extension MapViewController: MGLMapViewDelegate {
         self.userLocation = userLocation
 
         if isCenterMapRequested == true {
-            centerMapOnUserPosition()
+            centerMapOnUser()
         }
     }
 

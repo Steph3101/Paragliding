@@ -12,6 +12,9 @@
 		F431912821C07CAC006F787A /* ASMGLMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431912721C07CAC006F787A /* ASMGLMapView.swift */; };
 		F431912921C07E08006F787A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D8F21A9BEA400649DC5 /* Main.storyboard */; };
 		F437C72921BB43E70075F8BE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437C72821BB43E70075F8BE /* Strings.swift */; };
+		F44BD11D21C5944B00D6BF38 /* UIColor+Zeplin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BD11C21C5944B00D6BF38 /* UIColor+Zeplin.swift */; };
+		F44BD11F21C596CB00D6BF38 /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BD11E21C596CB00D6BF38 /* ClusterAnnotationView.swift */; };
+		F44BD12121C59AAB00D6BF38 /* UIFont+Zeplin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BD12021C59AAB00D6BF38 /* UIFont+Zeplin.swift */; };
 		F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459FAD221AF556E007BD86C /* AppDelegate.swift */; };
 		F46D900A21BB2616005D9849 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */; };
 		F46D900D21BB33C0005D9849 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = F46D900C21BB33C0005D9849 /* swiftgen.yml */; };
@@ -22,6 +25,20 @@
 		F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9221A9BEA400649DC5 /* Assets.xcassets */; };
 		F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */; };
 		F4E384B721B1FFAB009FF8C1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E384B621B1FFAB009FF8C1 /* Map.storyboard */; };
+		F4E7798D21C59FE8004C4AD6 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798B21C59D56004C4AD6 /* Roboto-Black.ttf */; };
+		F4E7798E21C59FE8004C4AD6 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798321C59D55004C4AD6 /* Roboto-BlackItalic.ttf */; };
+		F4E7798F21C59FE8004C4AD6 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798721C59D55004C4AD6 /* Roboto-Bold.ttf */; };
+		F4E7799021C59FE8004C4AD6 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798221C59D55004C4AD6 /* Roboto-BoldItalic.ttf */; };
+		F4E7799121C59FE8004C4AD6 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798421C59D55004C4AD6 /* Roboto-Italic.ttf */; };
+		F4E7799221C59FE8004C4AD6 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798821C59D55004C4AD6 /* Roboto-Light.ttf */; };
+		F4E7799321C59FE8004C4AD6 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798521C59D55004C4AD6 /* Roboto-LightItalic.ttf */; };
+		F4E7799421C59FE8004C4AD6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798121C59D54004C4AD6 /* Roboto-Medium.ttf */; };
+		F4E7799521C59FE8004C4AD6 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798621C59D55004C4AD6 /* Roboto-MediumItalic.ttf */; };
+		F4E7799621C59FE8004C4AD6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798921C59D55004C4AD6 /* Roboto-Regular.ttf */; };
+		F4E7799721C59FE8004C4AD6 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798C21C59D56004C4AD6 /* Roboto-Thin.ttf */; };
+		F4E7799821C59FE8004C4AD6 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798A21C59D56004C4AD6 /* Roboto-ThinItalic.ttf */; };
+		F4E7799A21C5B4BB004C4AD6 /* SiteAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E7799921C5B4BB004C4AD6 /* SiteAnnotationView.swift */; };
+		F4E7799C21C5C39F004C4AD6 /* SiteAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E7799B21C5C39F004C4AD6 /* SiteAnnotationViewModel.swift */; };
 		F4F9F60D21B713230061DA48 /* FFVLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9F60C21B713230061DA48 /* FFVLAPI.swift */; };
 		F4F9F61021B719040061DA48 /* getSites.json in Resources */ = {isa = PBXBuildFile; fileRef = F4F9F60F21B719040061DA48 /* getSites.json */; };
 		F4F9F61221B71ABA0061DA48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9F61121B71ABA0061DA48 /* MapViewController.swift */; };
@@ -35,8 +52,11 @@
 		F42AC92121C056DE00938786 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		F431912721C07CAC006F787A /* ASMGLMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASMGLMapView.swift; sourceTree = "<group>"; };
 		F437C72821BB43E70075F8BE /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		F44BD11C21C5944B00D6BF38 /* UIColor+Zeplin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Zeplin.swift"; sourceTree = "<group>"; };
+		F44BD11E21C596CB00D6BF38 /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
+		F44BD12021C59AAB00D6BF38 /* UIFont+Zeplin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Zeplin.swift"; sourceTree = "<group>"; };
 		F459FAD221AF556E007BD86C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIAlertControllerExtension.swift; path = Paragliding/Utils/UIAlertControllerExtension.swift; sourceTree = SOURCE_ROOT; };
+		F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIAlertControllerExtension.swift; path = Paragliding/Utils/Extensions/UIAlertControllerExtension.swift; sourceTree = SOURCE_ROOT; };
 		F46D900C21BB33C0005D9849 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
 		F46D902421BB3EDD005D9849 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F46D902621BB3EE0005D9849 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -50,6 +70,20 @@
 		F4D00D9721A9BEA400649DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E384B621B1FFAB009FF8C1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		F4E384B821B20BE9009FF8C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F4E7798121C59D54004C4AD6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		F4E7798221C59D55004C4AD6 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F4E7798321C59D55004C4AD6 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F4E7798421C59D55004C4AD6 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		F4E7798521C59D55004C4AD6 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		F4E7798621C59D55004C4AD6 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F4E7798721C59D55004C4AD6 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		F4E7798821C59D55004C4AD6 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		F4E7798921C59D55004C4AD6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		F4E7798A21C59D56004C4AD6 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		F4E7798B21C59D56004C4AD6 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		F4E7798C21C59D56004C4AD6 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		F4E7799921C5B4BB004C4AD6 /* SiteAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteAnnotationView.swift; sourceTree = "<group>"; };
+		F4E7799B21C5C39F004C4AD6 /* SiteAnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteAnnotationViewModel.swift; sourceTree = "<group>"; };
 		F4F9F60C21B713230061DA48 /* FFVLAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFVLAPI.swift; sourceTree = "<group>"; };
 		F4F9F60F21B719040061DA48 /* getSites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getSites.json; sourceTree = "<group>"; };
 		F4F9F61121B71ABA0061DA48 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +124,8 @@
 			children = (
 				F4E384B621B1FFAB009FF8C1 /* Map.storyboard */,
 				F4F9F61121B71ABA0061DA48 /* MapViewController.swift */,
+				F44BD11E21C596CB00D6BF38 /* ClusterAnnotationView.swift */,
+				F4E7799921C5B4BB004C4AD6 /* SiteAnnotationView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -103,9 +139,20 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		F44BD11B21C5940300D6BF38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */,
+				F44BD11C21C5944B00D6BF38 /* UIColor+Zeplin.swift */,
+				F44BD12021C59AAB00D6BF38 /* UIFont+Zeplin.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F459FAD421AF55D0007BD86C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4E7798021C59D4B004C4AD6 /* Fonts */,
 				F4D00D8F21A9BEA400649DC5 /* Main.storyboard */,
 				F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */,
 				F459FAD221AF556E007BD86C /* AppDelegate.swift */,
@@ -179,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				F42AC92121C056DE00938786 /* MapViewModel.swift */,
+				F4E7799B21C5C39F004C4AD6 /* SiteAnnotationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,10 +234,29 @@
 		F4E384B421B1FD4E009FF8C1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */,
+				F44BD11B21C5940300D6BF38 /* Extensions */,
 				F431912721C07CAC006F787A /* ASMGLMapView.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F4E7798021C59D4B004C4AD6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F4E7798B21C59D56004C4AD6 /* Roboto-Black.ttf */,
+				F4E7798321C59D55004C4AD6 /* Roboto-BlackItalic.ttf */,
+				F4E7798721C59D55004C4AD6 /* Roboto-Bold.ttf */,
+				F4E7798221C59D55004C4AD6 /* Roboto-BoldItalic.ttf */,
+				F4E7798421C59D55004C4AD6 /* Roboto-Italic.ttf */,
+				F4E7798821C59D55004C4AD6 /* Roboto-Light.ttf */,
+				F4E7798521C59D55004C4AD6 /* Roboto-LightItalic.ttf */,
+				F4E7798121C59D54004C4AD6 /* Roboto-Medium.ttf */,
+				F4E7798621C59D55004C4AD6 /* Roboto-MediumItalic.ttf */,
+				F4E7798921C59D55004C4AD6 /* Roboto-Regular.ttf */,
+				F4E7798C21C59D56004C4AD6 /* Roboto-Thin.ttf */,
+				F4E7798A21C59D56004C4AD6 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F4F9F60B21B712FA0061DA48 /* Network */ = {
@@ -281,10 +348,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F431912921C07E08006F787A /* Main.storyboard in Resources */,
+				F4E7799121C59FE8004C4AD6 /* Roboto-Italic.ttf in Resources */,
+				F4E7799321C59FE8004C4AD6 /* Roboto-LightItalic.ttf in Resources */,
+				F4E7799021C59FE8004C4AD6 /* Roboto-BoldItalic.ttf in Resources */,
 				F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */,
+				F4E7799421C59FE8004C4AD6 /* Roboto-Medium.ttf in Resources */,
+				F4E7798F21C59FE8004C4AD6 /* Roboto-Bold.ttf in Resources */,
 				F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */,
+				F4E7799721C59FE8004C4AD6 /* Roboto-Thin.ttf in Resources */,
+				F4E7798D21C59FE8004C4AD6 /* Roboto-Black.ttf in Resources */,
+				F4E7798E21C59FE8004C4AD6 /* Roboto-BlackItalic.ttf in Resources */,
 				F4F9F61021B719040061DA48 /* getSites.json in Resources */,
+				F4E7799221C59FE8004C4AD6 /* Roboto-Light.ttf in Resources */,
+				F4E7799521C59FE8004C4AD6 /* Roboto-MediumItalic.ttf in Resources */,
 				F46D902321BB3EDD005D9849 /* Localizable.strings in Resources */,
+				F4E7799621C59FE8004C4AD6 /* Roboto-Regular.ttf in Resources */,
+				F4E7799821C59FE8004C4AD6 /* Roboto-ThinItalic.ttf in Resources */,
 				F4E384B721B1FFAB009FF8C1 /* Map.storyboard in Resources */,
 				F46D900D21BB33C0005D9849 /* swiftgen.yml in Resources */,
 			);
@@ -378,17 +457,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F44BD12121C59AAB00D6BF38 /* UIFont+Zeplin.swift in Sources */,
 				F4F9F61521B71D230061DA48 /* APIHelper.swift in Sources */,
+				F44BD11D21C5944B00D6BF38 /* UIColor+Zeplin.swift in Sources */,
 				F490DAC821C144A000FBAFFF /* Assets.swift in Sources */,
+				F4E7799C21C5C39F004C4AD6 /* SiteAnnotationViewModel.swift in Sources */,
 				F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */,
 				F437C72921BB43E70075F8BE /* Strings.swift in Sources */,
 				F459FAD321AF556E007BD86C /* AppDelegate.swift in Sources */,
 				F431912821C07CAC006F787A /* ASMGLMapView.swift in Sources */,
 				F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */,
 				F4F9F61221B71ABA0061DA48 /* MapViewController.swift in Sources */,
+				F4E7799A21C5B4BB004C4AD6 /* SiteAnnotationView.swift in Sources */,
 				F4F9F60D21B713230061DA48 /* FFVLAPI.swift in Sources */,
 				F46D900A21BB2616005D9849 /* UIAlertControllerExtension.swift in Sources */,
 				F42AC92221C056DE00938786 /* MapViewModel.swift in Sources */,
+				F44BD11F21C596CB00D6BF38 /* ClusterAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

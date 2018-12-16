@@ -19,6 +19,9 @@ private let kInitialZoomLevel               = 4.0
 class MapViewController: UIViewController {
 
     // MARK: - Properties
+    lazy var mapViewModel: MapViewModel = {
+        return MapViewModel()
+    }()
     var locationManager                         = CLLocationManager()
     var isLocationAuthorizationChangeFirstCall  = true
     var isCenterMapRequested                    = false
@@ -34,6 +37,7 @@ class MapViewController: UIViewController {
 
         setupUI()
         setupMapView()
+        setupViewModel()
         handleInitialLocationAuthorizations()
     }
 
@@ -56,10 +60,15 @@ class MapViewController: UIViewController {
         
         mapView.clusterManager.algorithm    = algorithm
         mapView.clusterManager.marginFactor = 1
+    }
 
-        MapViewModel.shared.getSites { (sites: [MKAnnotation]) in
-            self.mapView.clusterManager.annotations = sites
+    func setupViewModel() {
+        mapViewModel.addAnnotationsClosure = { [weak self] () in
+            guard let strongSelf = self else { return }
+            strongSelf.mapView.clusterManager.annotations = strongSelf.mapViewModel.annotations
         }
+
+        mapViewModel.getSites()
     }
 
     func updateCenterMapButton() {
@@ -175,12 +184,19 @@ extension MapViewController: MGLMapViewDelegate {
         }
 
         if cluster.count > 1 {
-            return mapView.dequeueReusableAnnotationView(withIdentifier: kCKClusterReuseIdentifier) ??
-                MBXClusterView(annotation: annotation, reuseIdentifier: kCKClusterReuseIdentifier)
+            if let clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: kCKClusterReuseIdentifier) as? ClusterAnnotationView {
+                clusterView.setup(withCount: cluster.count)
+                return clusterView
+            }
+            return ClusterAnnotationView(annotation: annotation, reuseIdentifier: kCKClusterReuseIdentifier, count: cluster.count)
         }
 
-        return mapView.dequeueReusableAnnotationView(withIdentifier: kCKAnnotationReuseIdentifier) ??
-            MBXAnnotationView(annotation: annotation, reuseIdentifier: kCKAnnotationReuseIdentifier)
+        guard let siteAnnotation = cluster.firstAnnotation,
+            let siteAnnotationViewModel = mapViewModel.getSiteAnnotationViewModel(forAnnotation: siteAnnotation) else {
+            return mapView.dequeueReusableAnnotationView(withIdentifier: kCKAnnotationReuseIdentifier)
+        }
+
+        return  SiteAnnotationView(annotation: annotation, reuseIdentifier: kCKAnnotationReuseIdentifier, viewModel: siteAnnotationViewModel)
     }
 
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
@@ -220,60 +236,4 @@ extension MapViewController: MGLMapViewDelegate {
 
         mapView.clusterManager.deselectAnnotation(cluster.firstAnnotation, animated: false);
     }
-}
-
-// MARK: - Custom annotation view
-class MBXAnnotationView: MGLAnnotationView {
-
-    var imageView: UIImageView!
-
-    override init(annotation: MGLAnnotation?, reuseIdentifier: String?) {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        imageView = UIImageView(image: Asset.mapAnnotation.image)
-        addSubview(imageView)
-        frame = imageView.frame
-
-        isDraggable = true
-        centerOffset = CGVector(dx: 0.5, dy: 1)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Not implemented")
-    }
-
-    override func setDragState(_ dragState: MGLAnnotationViewDragState, animated: Bool) {
-        super.setDragState(dragState, animated: animated)
-
-        switch dragState {
-        case .starting:
-            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.5, options: [.curveLinear], animations: {
-                self.transform = self.transform.scaledBy(x: 2, y: 2)
-            })
-        case .ending:
-            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.5, options: [.curveLinear], animations: {
-                self.transform = CGAffineTransform.identity
-            })
-        default:
-            break
-        }
-    }
-}
-
-class MBXClusterView: MGLAnnotationView {
-
-    var imageView: UIImageView!
-
-    override init(annotation: MGLAnnotation?, reuseIdentifier: String?) {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        imageView = UIImageView(image: Asset.mapCluster.image)
-        addSubview(imageView)
-        frame = imageView.frame
-
-        centerOffset = CGVector(dx: 0.5, dy: 1)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Not implemented")
-    }
-
 }

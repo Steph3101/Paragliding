@@ -14,6 +14,10 @@ class ClusterAnnotationView: MGLAnnotationView {
     var imageView: UIImageView!
     var countLabel: UILabel!
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
+
     init(annotation: MGLAnnotation?, reuseIdentifier: String?, count: UInt = 0) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
 
@@ -50,9 +54,5 @@ class ClusterAnnotationView: MGLAnnotationView {
         countLabel.text = String(count)
         countLabel.sizeToFit()
         countLabel.center = imageView.center
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Not implemented")
     }
 }

@@ -2,7 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "mapTakeOff.pdf"
+      "scale" : "1x",
+      "filename" : "mapTakeOff.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "mapTakeOff@2x.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "mapTakeOff@3x.png"
     }
   ],
   "info" : {

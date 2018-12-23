@@ -18,11 +18,12 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
-  internal static let mapAnnotation = ImageAsset(name: "mapAnnotation")
   internal static let mapCenter = ImageAsset(name: "mapCenter")
   internal static let mapCluster = ImageAsset(name: "mapCluster")
   internal static let mapLanding = ImageAsset(name: "mapLanding")
+  internal static let mapLandingWest = ImageAsset(name: "mapLandingWest")
   internal static let mapTakeOff = ImageAsset(name: "mapTakeOff")
+  internal static let mapTakeOffWest = ImageAsset(name: "mapTakeOffWest")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

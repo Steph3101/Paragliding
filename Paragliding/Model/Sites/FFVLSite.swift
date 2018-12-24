@@ -21,12 +21,20 @@ class FFVLSite: Site, ALSwiftyJSONAble {
         self.name               = jsonData["nom"].stringValue
         self.siteDescription    = jsonData["description"].stringValue
         self.altitude           = jsonData["alt"].intValue
-        self.orientations       = Orientation.orientations(fromList: jsonData["orientation"].stringValue)
-        self.favorableWinds     = Orientation.orientations(fromList: jsonData["vent_favo"].stringValue)
-        self.unfavorableWinds   = Orientation.orientations(fromList: jsonData["vent_defavo"].stringValue)
         self.isFlyingActivity   = jsonData["site_type"].stringValue == "vol"
         self.type               = FFVLSite.type(fromString: jsonData["site_sous_type"].stringValue)
         self.activities         = FFVLSite.activities(fromList: jsonData["pratiques"].stringValue)
+
+        // Orientations
+        self.favorableWinds     = Orientation.orientations(fromList: jsonData["vent_favo"].stringValue)
+        self.unfavorableWinds   = Orientation.orientations(fromList: jsonData["vent_defavo"].stringValue)
+
+        let orientationsValue = jsonData["orientation"].stringValue
+        if orientationsValue.uppercased() == "TOUTES" {
+            self.orientations = Orientation.allCases
+        } else {
+            self.orientations = Orientation.orientations(fromList: orientationsValue)
+        }
 
         // Map coordinates
         let latitude    = Double(jsonData["lat"].stringValue)

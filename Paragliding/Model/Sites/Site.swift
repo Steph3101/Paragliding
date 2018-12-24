@@ -12,7 +12,7 @@ import MapKit
 class Site: NSObject, MKAnnotation {
     var name: String?
     var coordinate: CLLocationCoordinate2D = kCLLocationCoordinate2DInvalid
-    var orientations: [Orientation]?
+    var orientations: [Orientation]? = [Orientation]()
     var favorableWinds: [Orientation]?
     var unfavorableWinds: [Orientation]?
     var siteDescription: String?
@@ -43,7 +43,7 @@ enum Activity {
     case hangGliding
 }
 
-enum Orientation: String {
+enum Orientation: String, CaseIterable {
     case N
     case NNE
     case NE
@@ -61,23 +61,55 @@ enum Orientation: String {
     case NW
     case NNW
 
+    var degrees: CGFloat {
+        let sectionAngle: CGFloat = 360 / CGFloat(Orientation.allCases.count)
+        switch self {
+        case .N:    return sectionAngle * 0
+        case .NNE:  return sectionAngle * 1
+        case .NE:   return sectionAngle * 2
+        case .ENE:  return sectionAngle * 3
+        case .E:    return sectionAngle * 4
+        case .ESE:  return sectionAngle * 5
+        case .SE:   return sectionAngle * 6
+        case .SSE:  return sectionAngle * 7
+        case .S:    return sectionAngle * 8
+        case .SSW:  return sectionAngle * 9
+        case .SW:   return sectionAngle * 10
+        case .WSW:  return sectionAngle * 11
+        case .W:    return sectionAngle * 12
+        case .WNW:  return sectionAngle * 13
+        case .NW:   return sectionAngle * 14
+        case .NNW:  return sectionAngle * 15
+        }
+    }
+
+    var trigonometricDegrees: CGFloat {
+        return degrees - 90
+    }
+
+    var radians: CGFloat {
+        return trigonometricDegrees * CGFloat.pi / 180
+    }
+
     init?(withFrenchNotation notation: String) {
         if let orientation = Orientation.init(rawValue: notation.replacingOccurrences(of: "O", with: "W")) {
             self = orientation
+        } else {
+            return nil
         }
-
-        return nil
     }
 
     static func orientations(fromList list: String) -> [Orientation]? {
         let separator = list.contains(",") ? "," : ";"
 
-        let orientations = list.components(separatedBy: separator)
-        guard list.isEmpty == false, orientations.count > 0 else { return nil }
+        let orientationsStrings = list.components(separatedBy: separator)
+        guard list.isEmpty == false, orientationsStrings.count > 0 else { return nil }
 
-        return orientations.compactMap { (orientationString) -> Orientation? in
+        let orientations = orientationsStrings.compactMap { (orientationString) -> Orientation? in
             return orientationString.isEmpty ? nil : Orientation(withFrenchNotation: orientationString)
         }
+
+        return orientations
     }
 
     static func string(fromOrientations orientations: [Orientation]) -> String {

@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "mapLanding.pdf",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "mapLanding.pdf"
     }
   ],
   "info" : {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BFFAFB00983779B7B9AF7550 /* Pods_Paragliding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DCC5434EF734E66F6272D /* Pods_Paragliding.framework */; };
+		F427CD3B21CFCE8E007575F4 /* OrientationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F427CD3A21CFCE8D007575F4 /* OrientationsView.swift */; };
 		F42AC92221C056DE00938786 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42AC92121C056DE00938786 /* MapViewModel.swift */; };
 		F431912821C07CAC006F787A /* ASMGLMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431912721C07CAC006F787A /* ASMGLMapView.swift */; };
 		F431912921C07E08006F787A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D8F21A9BEA400649DC5 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		270DCC5434EF734E66F6272D /* Pods_Paragliding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paragliding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6B736CF89E84A411195B74 /* Pods-Paragliding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragliding.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding.release.xcconfig"; sourceTree = "<group>"; };
 		70078B5D1A219AB4C09476CD /* Pods-Paragliding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paragliding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paragliding/Pods-Paragliding.debug.xcconfig"; sourceTree = "<group>"; };
+		F427CD3A21CFCE8D007575F4 /* OrientationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationsView.swift; sourceTree = "<group>"; };
 		F42AC92121C056DE00938786 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		F431912721C07CAC006F787A /* ASMGLMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASMGLMapView.swift; sourceTree = "<group>"; };
 		F437C72821BB43E70075F8BE /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				F4F9F61121B71ABA0061DA48 /* MapViewController.swift */,
 				F44BD11E21C596CB00D6BF38 /* ClusterAnnotationView.swift */,
 				F4E7799921C5B4BB004C4AD6 /* SiteAnnotationView.swift */,
+				F427CD3A21CFCE8D007575F4 /* OrientationsView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 			files = (
 				F44BD12121C59AAB00D6BF38 /* UIFont+Zeplin.swift in Sources */,
 				F4F9F61521B71D230061DA48 /* APIHelper.swift in Sources */,
+				F427CD3B21CFCE8E007575F4 /* OrientationsView.swift in Sources */,
 				F44BD11D21C5944B00D6BF38 /* UIColor+Zeplin.swift in Sources */,
 				F490DAC821C144A000FBAFFF /* Assets.swift in Sources */,
 				F4E7799C21C5C39F004C4AD6 /* SiteAnnotationViewModel.swift in Sources */,

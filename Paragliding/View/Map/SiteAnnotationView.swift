@@ -11,18 +11,29 @@ import Mapbox
 
 class SiteAnnotationView: MGLAnnotationView {
     var viewModel: SiteAnnotationViewModel
-    var imageView: UIImageView!
 
     init(annotation: MGLAnnotation?, reuseIdentifier: String?, viewModel: SiteAnnotationViewModel) {
         self.viewModel = viewModel
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
 
-        imageView = UIImageView(image: viewModel.image)
+        let imageView = UIImageView(image: viewModel.image)
         addSubview(imageView)
+
         frame = imageView.frame
 
         isDraggable = true
-        centerOffset = CGVector(dx: 0.5, dy: 1)
+
+        if let orientations = viewModel.orientations, orientations.count > 0 {
+            let orientationsView = OrientationsView(withImage: viewModel.image,
+                                                    orientations: orientations,
+                                                    width: 10,
+                                                    centerOffset: 11)
+            frame = orientationsView.frame
+
+            imageView.center = orientationsView.center
+
+            addSubview(orientationsView)
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {

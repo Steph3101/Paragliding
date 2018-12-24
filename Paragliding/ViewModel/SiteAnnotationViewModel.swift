@@ -12,6 +12,10 @@ class SiteAnnotationViewModel: NSObject {
 
     var site: Site?
 
+    var orientations: [Orientation]? {
+        return site?.orientations
+    }
+
     convenience init(site: Site) {
         self.init()
 
@@ -22,7 +26,7 @@ class SiteAnnotationViewModel: NSObject {
         guard let type = site?.type else { return UIImage () }
 
         switch type {
-        case .takeOff:
+        case .takeOff, .winch:
             return Asset.mapTakeOff.image
         case .landing:
             return Asset.mapLanding.image

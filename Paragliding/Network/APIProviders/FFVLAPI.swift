@@ -32,7 +32,7 @@ extension FFVLAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .getSites:
-            guard let url = Bundle.main.url(forResource: "getSites", withExtension: "json"),
+            guard let url = Bundle.main.url(forResource: "FFVL-getSites", withExtension: "json"),
                 let data = try? Data(contentsOf: url) else {
                     return Data()
             }

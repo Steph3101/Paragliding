@@ -29,6 +29,13 @@ internal enum L10n {
       internal static let title = L10n.tr("Localizable", "map.locationAlert.title")
     }
   }
+
+  internal enum Search {
+    internal enum SearchBar {
+      /// Where do you want to fly?
+      internal static let placeholder = L10n.tr("Localizable", "search.searchBar.placeholder")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

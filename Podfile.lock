@@ -15,6 +15,7 @@ PODS:
   - Moya/Core (10.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - Pulley (2.6.2)
   - Result (3.2.4)
   - SwifterSwift (4.6.0):
     - SwifterSwift/AppKit (= 4.6.0)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - Mapbox-iOS-SDK
   - Moya
   - Moya-SwiftyJSONMapper
+  - Pulley
   - SwifterSwift
   - SwiftGen
 
@@ -51,6 +53,7 @@ SPEC REPOS:
     - Mapbox-iOS-SDK
     - Moya
     - Moya-SwiftyJSONMapper
+    - Pulley
     - Result
     - SwifterSwift
     - SwiftGen
@@ -62,11 +65,12 @@ SPEC CHECKSUMS:
   Mapbox-iOS-SDK: 204c04713477cf2a88c52c5a8eed1790eb75a02a
   Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
   Moya-SwiftyJSONMapper: ceecd41a96b31ae4d17cd80a271a544563fe2c57
+  Pulley: 2679a2b5a9714c5eb760b1fbb535d15c60e50fb4
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SwifterSwift: 812ffec6f301922f5430e75be3f2939ea3a80024
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 37062b8dc3f4e36283c85967398994924d5cbc5b
+PODFILE CHECKSUM: 41ef93fd91c70c53bb1651b32040dab7d2344e5a
 
 COCOAPODS: 1.5.3

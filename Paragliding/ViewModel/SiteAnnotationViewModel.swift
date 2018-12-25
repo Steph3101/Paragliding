@@ -30,8 +30,6 @@ class SiteAnnotationViewModel: NSObject {
             return Asset.mapTakeOff.image
         case .landing:
             return Asset.mapLanding.image
-        default:
-            return UIImage()
         }
     }
 }

@@ -6,15 +6,18 @@
   Copyright © 2018 Stéphane Azzopardi. All rights reserved.
 */
 
-//MARK: - Common
+// MARK: - Common
 "common.settings"   = "Réglages";
 "common.cancel"     = "Annuler";
 
-//MARK: - Map
+// MARK: - Map
 "map.locationAlert.title"   = "Position GPS";
 "map.locationAlert.message" = "Accédez aux réglages de votre %@ pour autoriser %@ à consulter votre position GPS";
 
-//MARK: Orientations
+// MARK: - Search
+"search.searchBar.placeholder" = "Où voulez-vous voler ?";
+
+// MARK: Orientations
 // Translate only orientations containing West value
 "SSW"   = "SSO";
 "SW"    = "SO";

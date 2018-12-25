@@ -41,6 +41,12 @@ class MapViewController: UIViewController {
         handleInitialLocationAuthorizations()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        pulleyViewController?.animationDuration = 0.6
+    }
+
     private func setupUI() {
         mapView.showsUserLocation = true
         centerMapButtonContainerView.roundCorners(.allCorners, radius: centerMapButtonContainerView.height / 2)
@@ -128,7 +134,7 @@ class MapViewController: UIViewController {
     }
 }
 
-//MARK: - User actions
+// MARK: - User actions
 extension MapViewController {
     @IBAction func centerMapButtonPressed(_ sender: Any) {
         switch CLLocationManager.authorizationStatus() {
@@ -143,7 +149,7 @@ extension MapViewController {
     }
 }
 
-//MARK: - CLLocationManagerDelegate
+// MARK: - CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // Hack because this method is always called twice at start
@@ -167,7 +173,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
-//MARK: - MGLMapViewDelegate
+// MARK: - MGLMapViewDelegate
 extension MapViewController: MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
         self.userLocation = userLocation
@@ -177,7 +183,7 @@ extension MapViewController: MGLMapViewDelegate {
         }
     }
 
-    //MARK: ClusterKit
+    // MARK: ClusterKit
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
         guard let cluster = annotation as? CKCluster else {
             return nil

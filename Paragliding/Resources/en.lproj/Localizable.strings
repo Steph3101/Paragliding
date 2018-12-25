@@ -6,10 +6,13 @@
   Copyright © 2018 Stéphane Azzopardi. All rights reserved.
 */
 
-//MARK: - Common
+// MARK: - Common
 "common.cancel"     = "Cancel";
 "common.settings"   = "Settings";
 
-//MARK: - Map
+// MARK: - Map
 "map.locationAlert.title"   = "Location";
 "map.locationAlert.message" = "Edit your %@'s settings to authorize %@ to read your location.";
+
+// MARK: - Search
+"search.searchBar.placeholder" = "Where do you want to fly?";

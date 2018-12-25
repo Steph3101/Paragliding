@@ -13,5 +13,6 @@ target 'Paragliding' do
   pod 'SwiftGen'
   pod 'Mapbox-iOS-SDK'
   pod 'ClusterKit/Mapbox'
+  pod 'Pulley'
 
 end

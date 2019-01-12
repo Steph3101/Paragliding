@@ -9,7 +9,7 @@
 import UIKit
 import SwifterSwift
 
-class OrientationsView: UIView {
+final class OrientationsView: UIView {
 
     private var image: UIImage?
     private var orientations: [Orientation]?

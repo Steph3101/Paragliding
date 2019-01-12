@@ -11,7 +11,7 @@ import SwiftyJSON
 import CoreLocation
 import MapKit
 
-class FFVLSite: Site, ALSwiftyJSONAble {
+final class FFVLSite: Site, ALSwiftyJSONAble {
 
     var isFlyingActivity: Bool = false
 

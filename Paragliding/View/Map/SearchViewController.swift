@@ -10,7 +10,7 @@ import UIKit
 import Pulley
 import SwifterSwift
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
     // MARK: - Properties
     @IBOutlet var tableView: UITableView!

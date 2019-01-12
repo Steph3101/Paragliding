@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SiteAnnotationViewModel: NSObject {
+final class SiteAnnotationViewModel: NSObject {
 
     var site: Site?
 

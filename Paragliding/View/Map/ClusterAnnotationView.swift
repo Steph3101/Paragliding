@@ -10,7 +10,7 @@ import UIKit
 import Mapbox
 import SwifterSwift
 
-class ClusterAnnotationView: MGLAnnotationView {
+final class ClusterAnnotationView: MGLAnnotationView {
     var imageView: UIImageView!
     var countLabel: UILabel!
 

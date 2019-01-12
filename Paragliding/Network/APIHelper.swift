@@ -11,7 +11,7 @@ import Moya_SwiftyJSONMapper
 import SwiftyJSON
 import CoreLocation
 
-class APIHelper: NSObject {
+final class APIHelper: NSObject {
 
     // Default provider
 //    private static let FFVLProvider = MoyaProvider<FFVLAPI>()

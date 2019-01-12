@@ -9,5 +9,5 @@
 
 import Mapbox
 
-class ASMGLMapView: MGLMapView {
+final class ASMGLMapView: MGLMapView {
 }

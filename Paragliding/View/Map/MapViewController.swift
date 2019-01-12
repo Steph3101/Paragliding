@@ -16,7 +16,7 @@ private let kCKAnnotationReuseIdentifier    = "annotation"
 private let kUserZoomLevel                  = 11.0
 private let kInitialZoomLevel               = 4.0
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
 
     // MARK: - Properties
     lazy var mapViewModel: MapViewModel = {

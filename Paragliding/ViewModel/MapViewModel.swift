@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewModel: NSObject {
+final class MapViewModel: NSObject {
 
     private var sites: [Site] = [Site]() {
         didSet {

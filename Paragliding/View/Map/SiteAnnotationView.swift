@@ -9,7 +9,7 @@
 import UIKit
 import Mapbox
 
-class SiteAnnotationView: MGLAnnotationView {
+final class SiteAnnotationView: MGLAnnotationView {
     var viewModel: SiteAnnotationViewModel
 
     init(annotation: MGLAnnotation?, reuseIdentifier: String?, viewModel: SiteAnnotationViewModel) {

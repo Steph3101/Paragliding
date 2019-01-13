@@ -19,9 +19,7 @@ private let kInitialZoomLevel               = 4.0
 final class MapViewController: UIViewController {
 
     // MARK: - Properties
-    lazy var mapViewModel: MapViewModel = {
-        return MapViewModel()
-    }()
+    lazy var mapViewModel: MapViewModel = { return MapViewModel() }()
     var locationManager                         = CLLocationManager()
     var isLocationAuthorizationChangeFirstCall  = true
     var isCenterMapRequested                    = false

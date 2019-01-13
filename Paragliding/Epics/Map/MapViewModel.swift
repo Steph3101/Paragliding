@@ -11,7 +11,7 @@ import MapKit
 
 final class MapViewModel: NSObject {
 
-    private var sites: [Site] = [Site]() {
+    var sites: [Site] = [Site]() {
         didSet {
             addAnnotationsClosure?()
         }
@@ -27,9 +27,8 @@ final class MapViewModel: NSObject {
     func getSites() {
         APIHelper.getFFVLSites { (sites) in
             self.sites = sites
-            self.sitesAnnotationsViewModels.removeAll()
-            self.sites.forEach({ (site) in
-                self.sitesAnnotationsViewModels.append(SiteAnnotationViewModel(site: site))
+            self.sitesAnnotationsViewModels = self.sites.map({ (site) -> SiteAnnotationViewModel in
+                return SiteAnnotationViewModel(site: site)
             })
         }
     }

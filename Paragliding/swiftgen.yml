@@ -9,3 +9,10 @@ xcassets:
   outputs:
     templateName: swift4
     output: Assets.swift
+ib:
+  inputs: Epics
+  outputs:
+    - templateName: scenes-swift4
+      output: SBScenes.swift
+    - templateName: segues-swift4
+      output: SBSegues.swift

@@ -21,11 +21,12 @@ final class SearchViewController: UIViewController {
 
     let headerHeight: CGFloat = 68.0
 
+    lazy var searchViewModel: SearchViewModel = { return SearchViewModel() }()
+
     fileprivate var drawerBottomSafeArea: CGFloat = 0.0 {
         didSet {
             self.loadViewIfNeeded()
 
-            // We'll configure our UI to respect the safe area. In our small demo app, we just want to adjust the contentInset for the tableview.
             tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: drawerBottomSafeArea, right: 0.0)
         }
     }
@@ -49,6 +50,12 @@ final class SearchViewController: UIViewController {
     }
 
     private func setup() {
+        searchViewModel.updateSearchResultsClosure = { [weak self] () in
+            guard let strongSelf = self else { return }
+
+            strongSelf.tableView.reloadData()
+        }
+
         searchBar.delegate      = self
         tableView.delegate      = self
         tableView.dataSource    = self
@@ -72,6 +79,10 @@ extension SearchViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         pulleyViewController?.setDrawerPosition(position: .open, animated: true)
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchViewModel.searchText = searchText
     }
 }
 
@@ -115,13 +126,13 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return searchViewModel.rowsCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableViewCell = UITableViewCell()
 
-        tableViewCell.textLabel?.text = "Result \(indexPath.row + 1)"
+        tableViewCell.textLabel?.text = searchViewModel.title(forIndexPath: indexPath)
 
         return tableViewCell
     }

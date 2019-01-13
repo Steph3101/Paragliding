@@ -11,6 +11,8 @@ import MapKit
 
 final class MapViewModel: NSObject {
 
+    var addAnnotationsClosure: (()->())?
+
     var sites: [Site] = [Site]() {
         didSet {
             addAnnotationsClosure?()
@@ -21,8 +23,6 @@ final class MapViewModel: NSObject {
     var annotations: [MKAnnotation] {
         return sites
     }
-
-    var addAnnotationsClosure: (()->())?
 
     func getSites() {
         APIHelper.getFFVLSites { (sites) in

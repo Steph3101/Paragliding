@@ -241,3 +241,13 @@ extension MapViewController: MGLMapViewDelegate {
         mapView.clusterManager.deselectAnnotation(cluster.firstAnnotation, animated: false);
     }
 }
+
+extension MapViewController: SearchDelegate {
+    func didSelect(searchResult: SearchResult) {
+        switch searchResult {
+        case .site(let site):
+            centerMap(site.coordinate, zoomLevel: kUserZoomLevel)
+            mapView.clusterManager.selectAnnotation(site, animated: true)
+        }
+    }
+}

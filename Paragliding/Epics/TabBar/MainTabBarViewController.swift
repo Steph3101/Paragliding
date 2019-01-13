@@ -18,9 +18,11 @@ class MainTabBarViewController: UITabBarController {
     }
 
     func setup() {
-        let mapViewController = StoryboardScene.Map.mapViewController.instantiate()
-        let searchViewController = StoryboardScene.Map.searchViewController.instantiate()
-        searchViewController.searchViewModel.mapViewModel = mapViewController.mapViewModel
+        let mapViewController       = StoryboardScene.Map.mapViewController.instantiate()
+        let searchViewController    = StoryboardScene.Map.searchViewController.instantiate()
+
+        searchViewController.searchViewModel.mapViewModel   = mapViewController.mapViewModel
+        searchViewController.searchDelegate                 = mapViewController
 
         let mapPulleyViewController = PulleyViewController(contentViewController: mapViewController, drawerViewController: searchViewController)
 

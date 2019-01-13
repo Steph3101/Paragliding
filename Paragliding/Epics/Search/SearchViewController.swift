@@ -10,6 +10,10 @@ import UIKit
 import Pulley
 import SwifterSwift
 
+protocol SearchDelegate {
+    func didSelect(searchResult: SearchResult)
+}
+
 final class SearchViewController: UIViewController {
 
     // MARK: - Properties
@@ -20,8 +24,8 @@ final class SearchViewController: UIViewController {
     @IBOutlet weak var headerSectionHeightConstraint: NSLayoutConstraint!
 
     let headerHeight: CGFloat = 68.0
-
     lazy var searchViewModel: SearchViewModel = { return SearchViewModel() }()
+    var searchDelegate: SearchDelegate?
 
     fileprivate var drawerBottomSafeArea: CGFloat = 0.0 {
         didSet {
@@ -135,6 +139,17 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         tableViewCell.textLabel?.text = searchViewModel.title(forIndexPath: indexPath)
 
         return tableViewCell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        guard let searchResult = searchViewModel.searchResult(forIndexPath: indexPath) else {
+            fatalError("Search result should not be empty")
+        }
+
+        pulleyViewController?.setDrawerPosition(position: .collapsed, animated: true)
+        searchDelegate?.didSelect(searchResult: searchResult)
     }
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

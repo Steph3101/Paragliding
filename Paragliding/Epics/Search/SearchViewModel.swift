@@ -57,6 +57,10 @@ final class SearchViewModel: NSObject {
     }
 
     func title(forIndexPath indexPath: IndexPath) -> String {
-        return searchResults?[indexPath.row].title ?? "--"
+        return searchResult(forIndexPath: indexPath)?.title ?? "-"
+    }
+
+    func searchResult(forIndexPath indexPath: IndexPath) -> SearchResult? {
+        return searchResults?[indexPath.row]
     }
 }

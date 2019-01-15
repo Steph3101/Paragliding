@@ -21,6 +21,7 @@
 		F45F970621EAB0D300916888 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F970521EAB0D300916888 /* MainTabBarViewController.swift */; };
 		F45F970D21EAB21A00916888 /* SBSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F970B21EAB21900916888 /* SBSegues.swift */; };
 		F45F970E21EAB21A00916888 /* SBScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F970C21EAB21A00916888 /* SBScenes.swift */; };
+		F4606EF021EE90FC006CC649 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4606EEF21EE90FC006CC649 /* LaunchScreen.xib */; };
 		F462BEBD21D27D41008A4457 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462BEBC21D27D41008A4457 /* SearchViewController.swift */; };
 		F46D900A21BB2616005D9849 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */; };
 		F46D900D21BB33C0005D9849 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = F46D900C21BB33C0005D9849 /* swiftgen.yml */; };
@@ -29,7 +30,6 @@
 		F4BDE66D21B5E7C200E7FA39 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66C21B5E7C200E7FA39 /* Site.swift */; };
 		F4BDE66F21B5F0F400E7FA39 /* FFVLSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE66E21B5F0F400E7FA39 /* FFVLSite.swift */; };
 		F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9221A9BEA400649DC5 /* Assets.xcassets */; };
-		F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */; };
 		F4E384B721B1FFAB009FF8C1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E384B621B1FFAB009FF8C1 /* Map.storyboard */; };
 		F4E7798D21C59FE8004C4AD6 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798B21C59D56004C4AD6 /* Roboto-Black.ttf */; };
 		F4E7798E21C59FE8004C4AD6 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4E7798321C59D55004C4AD6 /* Roboto-BlackItalic.ttf */; };
@@ -67,6 +67,7 @@
 		F45F970521EAB0D300916888 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F45F970B21EAB21900916888 /* SBSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBSegues.swift; sourceTree = "<group>"; };
 		F45F970C21EAB21A00916888 /* SBScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBScenes.swift; sourceTree = "<group>"; };
+		F4606EEF21EE90FC006CC649 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F462BEBC21D27D41008A4457 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F46D900921BB2615005D9849 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIAlertControllerExtension.swift; path = Paragliding/Utils/Extensions/UIAlertControllerExtension.swift; sourceTree = SOURCE_ROOT; };
 		F46D900C21BB33C0005D9849 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		F4D00D8821A9BEA400649DC5 /* Paragliding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paragliding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D00D9021A9BEA400649DC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4D00D9221A9BEA400649DC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F4D00D9521A9BEA400649DC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4D00D9721A9BEA400649DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E384B621B1FFAB009FF8C1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		F4E384B821B20BE9009FF8C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E7798021C59D4B004C4AD6 /* Fonts */,
-				F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */,
+				F4606EEF21EE90FC006CC649 /* LaunchScreen.xib */,
 				F459FAD221AF556E007BD86C /* AppDelegate.swift */,
 				F4D00D9221A9BEA400649DC5 /* Assets.xcassets */,
 				F46D902521BB3EDD005D9849 /* Localizable.strings */,
@@ -377,7 +377,6 @@
 				F4E7799121C59FE8004C4AD6 /* Roboto-Italic.ttf in Resources */,
 				F4E7799321C59FE8004C4AD6 /* Roboto-LightItalic.ttf in Resources */,
 				F4E7799021C59FE8004C4AD6 /* Roboto-BoldItalic.ttf in Resources */,
-				F4D00D9621A9BEA400649DC5 /* LaunchScreen.storyboard in Resources */,
 				F4E7799421C59FE8004C4AD6 /* Roboto-Medium.ttf in Resources */,
 				F4E7798F21C59FE8004C4AD6 /* Roboto-Bold.ttf in Resources */,
 				F4D00D9321A9BEA400649DC5 /* Assets.xcassets in Resources */,
@@ -391,6 +390,7 @@
 				F4E7799621C59FE8004C4AD6 /* Roboto-Regular.ttf in Resources */,
 				F4E7799821C59FE8004C4AD6 /* Roboto-ThinItalic.ttf in Resources */,
 				F4E384B721B1FFAB009FF8C1 /* Map.storyboard in Resources */,
+				F4606EF021EE90FC006CC649 /* LaunchScreen.xib in Resources */,
 				F46D900D21BB33C0005D9849 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,14 +528,6 @@
 				F4D00D9021A9BEA400649DC5 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F4D00D9421A9BEA400649DC5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4D00D9521A9BEA400649DC5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="rxY-II-LFQ">
+            <view key="view" contentMode="scaleToFill" id="oWt-mG-iye">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-i9-waT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenIcon" translatesAutoresizingMaskIntoConstraints="NO" id="z35-Vu-kb0">
+                        <rect key="frame" x="110" y="168.5" width="197" height="197"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="z35-Vu-kb0" firstAttribute="centerY" secondItem="oWt-mG-iye" secondAttribute="centerY" multiplier="4/5" id="1e2-fQ-2St"/>
+                    <constraint firstItem="hsX-i9-waT" firstAttribute="bottom" secondItem="jSd-Db-TlN" secondAttribute="bottom" id="INn-rc-XHi"/>
+                    <constraint firstItem="hsX-i9-waT" firstAttribute="top" secondItem="oWt-mG-iye" secondAttribute="top" id="KAH-1o-Ruj"/>
+                    <constraint firstItem="hsX-i9-waT" firstAttribute="leading" secondItem="jSd-Db-TlN" secondAttribute="leading" id="au9-XR-jbb"/>
+                    <constraint firstItem="z35-Vu-kb0" firstAttribute="centerX" secondItem="oWt-mG-iye" secondAttribute="centerX" multiplier="10/9" id="f5j-Kv-X99"/>
+                    <constraint firstItem="hsX-i9-waT" firstAttribute="trailing" secondItem="jSd-Db-TlN" secondAttribute="trailing" id="qNt-Bd-Vax"/>
+                </constraints>
+                <viewLayoutGuide key="safeArea" id="jSd-Db-TlN"/>
+            </view>
+            <point key="canvasLocation" x="401" y="380"/>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="launchScreenBackground" width="1536" height="1536"/>
+        <image name="launchScreenIcon" width="197" height="197"/>
+    </resources>
+</document>

@@ -24,6 +24,8 @@ internal enum Asset {
   internal static let mapLandingWest = ImageAsset(name: "mapLandingWest")
   internal static let mapTakeOff = ImageAsset(name: "mapTakeOff")
   internal static let mapTakeOffWest = ImageAsset(name: "mapTakeOffWest")
+  internal static let launchScreenBackground = ImageAsset(name: "launchScreenBackground")
+  internal static let launchScreenIcon = ImageAsset(name: "launchScreenIcon")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

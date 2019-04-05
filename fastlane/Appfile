@@ -1,0 +1,8 @@
+app_identifier("stephane.azzopardi.Paragliding") # The bundle identifier of your app
+apple_id("contact@stephane-azzopardi.fr") # Your Apple email address
+
+itc_team_id("120032952") # App Store Connect Team ID
+team_id("2J52VZUHYB") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

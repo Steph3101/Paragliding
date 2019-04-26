@@ -54,7 +54,7 @@ final class MapViewController: UIViewController {
 
     private func setupMapView() {
         locationManager.delegate        = self
-        mapView.isRotateEnabled         = false
+        mapView.isRotateEnabled         = true
         mapView.showsScale              = true
         mapView.isHapticFeedbackEnabled = true
         mapView.delegate                = self

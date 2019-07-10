@@ -11,7 +11,7 @@ Extensions de la plupart des composants du SDK iOS.
 Gestion des API via un système d'Enum + parsing JSON.
 
 * ### Mapbox
-Composant de carte géographiques.
+Composant de cartes géographiques.
 
 * ### ClusterKit
 Librairie permettant de regrouper les annotations sur une carte.
